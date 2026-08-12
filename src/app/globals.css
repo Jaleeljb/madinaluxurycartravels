@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-gold-300/60 text-navy-900;
+  }
+
+  /* Visible, consistent keyboard focus ring everywhere. */
+  :focus-visible {
+    outline: 2px solid #c6972f;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-navy-900;
+  }
+
+  /* Tabular figures for prices and data — keeps numbers aligned. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-widest2 text-gold-600;
+  }
+
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-gold-500 text-navy-950 shadow-gold hover:bg-gold-400 active:bg-gold-600;
+  }
+
+  .btn-dark {
+    @apply btn bg-navy-900 text-paper hover:bg-navy-800 active:bg-navy-950;
+  }
+
+  .btn-outline {
+    @apply btn border border-navy-900/15 bg-transparent text-navy-900 hover:border-navy-900/30 hover:bg-navy-900/[0.03];
+  }
+
+  .btn-outline-light {
+    @apply btn border border-paper/30 bg-transparent text-paper hover:bg-paper/10;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1FBE5A] active:bg-[#1AA34D];
+  }
+
+  .card {
+    @apply rounded-xl2 border border-line bg-white shadow-card transition-shadow duration-300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
