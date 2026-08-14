@@ -1,0 +1,80 @@
+[
+  {
+    "id": "c001",
+    "name": "Toyota Camry",
+    "category": "Executive Sedan",
+    "seats": 4,
+    "bags": 3,
+    "pricePerDay": 220,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "Quiet, comfortable and reliable — the standard for airport transfers and Ziyarat routes between Madina and Makkah.",
+    "featured": true
+  },
+  {
+    "id": "c002",
+    "name": "GMC Yukon",
+    "category": "Luxury SUV",
+    "seats": 7,
+    "bags": 6,
+    "pricePerDay": 480,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "Full-size luxury for families and groups performing Umrah, with room for luggage and a smooth highway ride.",
+    "featured": true
+  },
+  {
+    "id": "c003",
+    "name": "Mercedes-Benz S-Class",
+    "category": "Premium Chauffeur",
+    "seats": 3,
+    "bags": 2,
+    "pricePerDay": 950,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "Our flagship chauffeur car — reserved for VIP transfers, weddings and business delegations.",
+    "featured": true
+  },
+  {
+    "id": "c004",
+    "name": "Toyota Hiace",
+    "category": "Group Van",
+    "seats": 11,
+    "bags": 10,
+    "pricePerDay": 380,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "Built for pilgrim groups — spacious, air-conditioned, with a dedicated driver who knows every route.",
+    "featured": false
+  },
+  {
+    "id": "c005",
+    "name": "Lexus ES",
+    "category": "Executive Sedan",
+    "seats": 4,
+    "bags": 3,
+    "pricePerDay": 300,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "A refined, whisper-quiet cabin for travellers who want comfort without ceremony.",
+    "featured": false
+  },
+  {
+    "id": "c006",
+    "name": "Nissan Patrol",
+    "category": "Luxury SUV",
+    "seats": 6,
+    "bags": 5,
+    "pricePerDay": 420,
+    "currency": "SAR",
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "966500000001",
+    "description": "Powerful and dependable for desert routes and longer intercity transfers.",
+    "featured": false
+  }
+]

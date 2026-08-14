@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0a0d12;
+  --charcoal: #12161d;
+  --card: #1a2029;
+  --card-border: #2a3240;
+  --gold: #c9a227;
+  --gold-light: #e7c871;
+  --ivory: #f6f1e4;
+  --emerald: #0f3d3a;
+  --muted: #97a1b0;
+  --danger: #d9564a;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-ivory: var(--ivory);
+  --color-emerald: var(--emerald);
+  --color-muted: var(--muted);
+  --color-danger: var(--danger);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Perforated "ticket stub" divider used across booking cards */
+.ticket-perforation {
+  position: relative;
+}
+.ticket-perforation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--card-border) 0,
+    var(--card-border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.gold-gradient-text {
+  background: linear-gradient(115deg, var(--gold-light) 0%, var(--gold) 55%, #8a6d17 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 8px;
+}
+
+.input {
+  background: rgba(10, 13, 18, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--ivory);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.input:focus {
+  border-color: var(--gold);
+}
+.input::placeholder {
+  color: var(--muted);
+}
