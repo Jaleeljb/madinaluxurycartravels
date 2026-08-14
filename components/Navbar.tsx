@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Car } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const LINKS = [
   { href: "#fleet", label: "Fleet" },
@@ -26,17 +27,12 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 ${
-        scrolled ? "bg-ink/85 backdrop-blur-md border-b border-card-border" : "bg-transparent"
+        scrolled ? "bg-paper/90 backdrop-blur-md border-b border-card-border" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between h-18 py-4">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="grid place-items-center w-9 h-9 rounded-full border border-gold/60 text-gold group-hover:bg-gold group-hover:text-ink transition-colors duration-300">
-            <Car size={16} strokeWidth={1.75} />
-          </span>
-          <span className="font-display text-lg sm:text-xl tracking-wide">
-            Madina <span className="gold-gradient-text">Luxury</span> Car Travels
-          </span>
+        <Link href="/" className="group">
+          <Logo />
         </Link>
 
         <div className="hidden md:flex items-center gap-9">
@@ -51,7 +47,7 @@ export default function Navbar() {
           ))}
           <a
             href="#fleet"
-            className="text-sm font-medium px-5 py-2.5 rounded-full bg-gold text-ink hover:bg-gold-light transition-colors"
+            className="text-sm font-medium px-5 py-2.5 rounded-full bg-gold text-white hover:bg-gold-light transition-colors"
           >
             Reserve now
           </a>
@@ -73,7 +69,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-ink/97 backdrop-blur-md border-b border-card-border"
+            className="md:hidden overflow-hidden bg-paper/97 backdrop-blur-md border-b border-card-border"
           >
             <div className="px-6 py-6 flex flex-col gap-5">
               {LINKS.map((l) => (
@@ -89,7 +85,7 @@ export default function Navbar() {
               <a
                 href="#fleet"
                 onClick={() => setOpen(false)}
-                className="text-center text-sm font-medium px-5 py-3 rounded-full bg-gold text-ink"
+                className="text-center text-sm font-medium px-5 py-3 rounded-full bg-gold text-white"
               >
                 Reserve now
               </a>

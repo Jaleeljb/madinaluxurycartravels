@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { MessageCircle, Phone, MapPin } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
+import Logo from "./Logo";
 
-const WHATSAPP_NUMBER = "966500000001";
+const WHATSAPP_NUMBER = "919876543210";
 
 export default function Footer() {
   return (
@@ -10,9 +11,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr] gap-12">
           <div>
-            <h3 className="font-display text-2xl font-semibold mb-3">
-              Madina <span className="gold-gradient-text">Luxury</span> Car Travels
-            </h3>
+            <div className="mb-4">
+              <Logo wordmarkClassName="font-display text-2xl font-semibold" />
+            </div>
             <p className="text-sm text-ivory/60 max-w-sm leading-relaxed mb-6">
               Chauffeured cars for Ziyarat, Umrah transfers and city travel —
               booked instantly over WhatsApp.
@@ -43,7 +44,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-ivory/70">
               <li className="flex items-center gap-2.5">
                 <Phone size={14} className="text-gold" />
-                +966 50 000 0001
+                +91 98765 43210
               </li>
               <li className="flex items-center gap-2.5">
                 <MapPin size={14} className="text-gold" />
@@ -54,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted font-mono">
-          <p>© {new Date().getFullYear()} Madina Luxury Car Travels. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Madina Travels. All rights reserved.</p>
           <p>Built for travellers, driven by locals.</p>
         </div>
       </div>

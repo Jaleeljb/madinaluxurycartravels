@@ -4,10 +4,12 @@ A car rental / travel booking site for **Madina Luxury Car Travels**, built with
 
 ## Features
 
-- Animated, fully responsive marketing site (hero, fleet grid with category filter, "how it works", about/stats, footer)
+- Animated, fully responsive marketing site in a light, warm-cream theme (hero, fleet grid with category filter, "how it works", about/stats, footer). The hero keeps a deliberate dark photo scrim for legibility — this is the one intentionally dark moment on an otherwise light site.
+- A custom "Madina Travels" logo (mark + wordmark), used in the header, footer, and admin login — see `components/Logo.tsx` and `public/logo.svg` (also used as the favicon)
+- Prices are shown in Indian Rupees (₹) by default
 - Every car card and the sticky WhatsApp button open a pre-filled WhatsApp chat (wa.me) with the car, rate and a booking template — no app install required for the customer
 - `/admin` — password-protected login
-- `/admin/dashboard` — add, edit and delete cars (name, category, seats, bags, price, currency, image, WhatsApp number, description, featured flag)
+- `/admin/dashboard` — add, edit and delete cars (name, category, seats, bags, price, currency, WhatsApp number, description, featured flag). Car photos are added by drag-and-drop or click-to-browse — there's no image URL field; uploaded photos are resized/compressed client-side and stored as the car's image.
 - Route protected by middleware/proxy using an HTTP-only session cookie
 
 ## Run locally
@@ -44,6 +46,8 @@ To make admin changes persist in production, swap the storage layer in `lib/data
 - Supabase — free Postgres + instant REST client
 
 Say the word and this can be wired up for any of these once you tell me which you'd like — it just needs a database you create and its connection string as an env var.
+
+Note that uploaded car photos are stored as compressed base64 images directly inside `data/cars.json` (see `lib/image.ts` and `components/admin/ImageDropzone.tsx`), so this same database swap will also carry photos with it — no separate file storage needed for a small fleet, though a dedicated image host (Vercel Blob, Cloudinary, S3) is worth it once you have many cars or want faster page loads.
 
 ## Editing the WhatsApp number
 

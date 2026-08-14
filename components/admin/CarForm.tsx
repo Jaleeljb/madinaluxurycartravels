@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import type { Car, CarInput } from "@/lib/types";
+import ImageDropzone from "./ImageDropzone";
 
 const EMPTY: CarInput = {
   name: "",
@@ -9,7 +10,7 @@ const EMPTY: CarInput = {
   seats: 4,
   bags: 2,
   pricePerDay: 0,
-  currency: "SAR",
+  currency: "₹",
   image: "",
   whatsapp: "",
   description: "",
@@ -36,6 +37,12 @@ export default function CarForm({
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError("");
+
+    if (!form.image) {
+      setError("Please add a car photo.");
+      return;
+    }
+
     setSaving(true);
     try {
       const res = await fetch(car ? `/api/cars/${car.id}` : "/api/cars", {
@@ -58,6 +65,10 @@ export default function CarForm({
 
   return (
     <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-4">
+      <Field label="Car photo" full>
+        <ImageDropzone value={form.image} onChange={(dataUrl) => update("image", dataUrl)} />
+      </Field>
+
       <Field label="Car name">
         <input required value={form.name} onChange={(e) => update("name", e.target.value)} className="input" placeholder="Toyota Camry" />
       </Field>
@@ -74,13 +85,10 @@ export default function CarForm({
         <input required type="number" min={0} value={form.pricePerDay} onChange={(e) => update("pricePerDay", Number(e.target.value))} className="input" />
       </Field>
       <Field label="Currency">
-        <input required value={form.currency} onChange={(e) => update("currency", e.target.value)} className="input" placeholder="SAR" />
+        <input required value={form.currency} onChange={(e) => update("currency", e.target.value)} className="input" placeholder="₹" />
       </Field>
-      <Field label="WhatsApp number (with country code)">
-        <input required value={form.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} className="input" placeholder="966500000001" />
-      </Field>
-      <Field label="Image URL">
-        <input required value={form.image} onChange={(e) => update("image", e.target.value)} className="input" placeholder="https://..." />
+      <Field label="WhatsApp number (with country code)" full>
+        <input required value={form.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} className="input" placeholder="919876543210" />
       </Field>
       <Field label="Description" full>
         <textarea
@@ -98,7 +106,7 @@ export default function CarForm({
           type="checkbox"
           checked={form.featured}
           onChange={(e) => update("featured", e.target.checked)}
-          className="w-4 h-4 accent-[#c9a227]"
+          className="w-4 h-4 accent-[#b8860b]"
         />
         Feature this car
       </label>
@@ -109,7 +117,7 @@ export default function CarForm({
         <button
           type="submit"
           disabled={saving}
-          className="rounded-full bg-gold text-ink font-medium px-6 py-2.5 hover:bg-gold-light transition-colors disabled:opacity-60"
+          className="rounded-full bg-gold text-white font-medium px-6 py-2.5 hover:bg-gold-light transition-colors disabled:opacity-60"
         >
           {saving ? "Saving…" : car ? "Save changes" : "Add car"}
         </button>

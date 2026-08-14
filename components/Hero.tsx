@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { MessageCircle, ArrowDown, MapPin } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "966500000001";
+const WHATSAPP_NUMBER = "919876543210";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-ink pt-28 pb-16">
-      {/* backdrop image */}
+    <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-paper pt-28 pb-16">
+      {/* backdrop image — kept as a deliberate dark, dramatic moment even in the light theme */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
@@ -18,7 +18,7 @@ export default function Hero() {
               "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2400&auto=format&fit=crop')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/85 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/80 to-paper" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent" />
       </div>
 
@@ -27,7 +27,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-6"
+          className="font-mono text-xs tracking-[0.25em] text-[#E9C46A] uppercase mb-6"
         >
           Chauffeured travel · Madina, Saudi Arabia
         </motion.p>
@@ -36,7 +36,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display font-semibold text-[2.5rem] leading-[1.08] sm:text-6xl sm:leading-[1.05] lg:text-7xl max-w-3xl"
+          className="font-display font-semibold text-[2.5rem] leading-[1.08] sm:text-6xl sm:leading-[1.05] lg:text-7xl max-w-3xl text-white"
         >
           Your journey through the <span className="gold-gradient-text italic">Blessed City</span>, arranged with care.
         </motion.h1>
@@ -45,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.22 }}
-          className="mt-6 max-w-xl text-base sm:text-lg text-ivory/70 leading-relaxed"
+          className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed"
         >
           Private sedans, SUVs and group vans for Ziyarat, Umrah transfers and
           city travel — reserved in minutes, confirmed over WhatsApp, driven
@@ -69,7 +69,7 @@ export default function Hero() {
           </a>
           <a
             href="#fleet"
-            className="inline-flex items-center gap-2 rounded-full border border-ivory/25 px-6 py-3.5 text-ivory/90 hover:border-gold hover:text-gold-light transition"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-white/90 hover:border-[#E9C46A] hover:text-[#E9C46A] transition"
           >
             View the fleet
           </a>
@@ -80,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 max-w-xl rounded-2xl border border-card-border bg-card/60 backdrop-blur-sm px-6 py-5"
+          className="mt-16 max-w-xl rounded-2xl border border-card-border bg-card/85 backdrop-blur-sm px-6 py-5 card-shadow"
         >
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2 text-ivory">
@@ -113,7 +113,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-ivory/50 hover:text-gold-light transition-colors"
+        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/60 hover:text-[#E9C46A] transition-colors"
       >
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase">Scroll</span>
         <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>

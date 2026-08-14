@@ -11,7 +11,7 @@ const STATS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-ink overflow-hidden">
+    <section id="about" className="relative py-24 sm:py-32 bg-paper overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -44,7 +44,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-card-border bg-card p-7"
+              className="rounded-2xl border border-card-border bg-card p-7 card-shadow"
             >
               <p className="font-display text-4xl font-bold gold-gradient-text mb-1">{s.value}</p>
               <p className="text-sm text-ivory/60">{s.label}</p>

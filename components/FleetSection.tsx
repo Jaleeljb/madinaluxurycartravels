@@ -12,7 +12,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
   const filtered = active === "All" ? cars : cars.filter((c) => c.category === active);
 
   return (
-    <section id="fleet" className="relative py-24 sm:py-32 bg-ink">
+    <section id="fleet" className="relative py-24 sm:py-32 bg-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
@@ -23,7 +23,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
           </div>
           <p className="max-w-sm text-sm text-ivory/60 leading-relaxed">
             Every car arrives cleaned, fuelled and with a driver briefed on
-            your itinerary. Prices shown are daily rates in Saudi Riyal.
+            your itinerary. Prices shown are daily rates in Indian Rupees.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
               onClick={() => setActive(cat)}
               className={`text-sm px-4 py-2 rounded-full border transition-colors ${
                 active === cat
-                  ? "bg-gold text-ink border-gold"
+                  ? "bg-gold text-white border-gold"
                   : "border-card-border text-ivory/70 hover:border-gold/50 hover:text-gold-light"
               }`}
             >

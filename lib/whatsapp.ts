@@ -10,7 +10,7 @@ export function bookingMessage(car: Car): string {
     `Assalamu alaikum, I'd like to book a vehicle from Madina Luxury Car Travels.`,
     ``,
     `Car: ${car.name} (${car.category})`,
-    `Rate: ${car.currency} ${car.pricePerDay}/day`,
+    `Rate: ${car.currency}${car.pricePerDay.toLocaleString("en-IN")}/day`,
     `Pickup date: `,
     `Pickup location: `,
     `Trip: `,

@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Pencil, Trash2, LogOut, Car as CarIcon, AlertTriangle, ExternalLink } from "lucide-react";
+import { Plus, Pencil, Trash2, LogOut, AlertTriangle, ExternalLink } from "lucide-react";
 import type { Car } from "@/lib/types";
 import CarForm from "@/components/admin/CarForm";
+import { LogoMark } from "@/components/Logo";
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -49,12 +50,12 @@ export default function AdminDashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-ink px-5 sm:px-8 py-10">
+    <main className="min-h-screen bg-paper px-5 sm:px-8 py-10">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
           <div className="flex items-center gap-3">
-            <span className="grid place-items-center w-10 h-10 rounded-full border border-gold/50 text-gold">
-              <CarIcon size={18} strokeWidth={1.75} />
+            <span className="text-gold">
+              <LogoMark size={38} />
             </span>
             <div>
               <h1 className="font-display text-2xl font-semibold">Fleet dashboard</h1>
@@ -84,12 +85,12 @@ export default function AdminDashboard() {
           {!adding ? (
             <button
               onClick={() => setAdding(true)}
-              className="flex items-center gap-2 rounded-full bg-gold text-ink font-medium px-5 py-2.5 hover:bg-gold-light transition-colors"
+              className="flex items-center gap-2 rounded-full bg-gold text-white font-medium px-5 py-2.5 hover:bg-gold-light transition-colors"
             >
               <Plus size={16} /> Add a car
             </button>
           ) : (
-            <div className="rounded-2xl border border-card-border bg-card p-6">
+            <div className="rounded-2xl border border-card-border bg-card p-6 card-shadow">
               <h2 className="font-display text-lg font-semibold mb-4">New car</h2>
               <CarForm
                 onSaved={() => {
@@ -115,7 +116,7 @@ export default function AdminDashboard() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, height: 0, marginBottom: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-2xl border border-card-border bg-card overflow-hidden"
+                  className="rounded-2xl border border-card-border bg-card overflow-hidden card-shadow"
                 >
                   {editingId === car.id ? (
                     <div className="p-6">
@@ -142,7 +143,7 @@ export default function AdminDashboard() {
                           )}
                         </div>
                         <p className="text-xs text-muted font-mono mt-1">
-                          {car.category} · {car.seats} seats · {car.bags} bags · {car.currency} {car.pricePerDay}/day
+                          {car.category} · {car.seats} seats · {car.bags} bags · {car.currency}{car.pricePerDay.toLocaleString("en-IN")}/day
                         </p>
                         <p className="text-xs text-muted mt-1">WhatsApp: {car.whatsapp}</p>
                       </div>
@@ -157,7 +158,7 @@ export default function AdminDashboard() {
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => handleDelete(car.id)}
-                              className="text-sm rounded-full bg-danger text-ivory px-3.5 py-2"
+                              className="text-sm rounded-full bg-danger text-white px-3.5 py-2"
                             >
                               Confirm
                             </button>
