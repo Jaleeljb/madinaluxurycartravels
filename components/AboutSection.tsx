@@ -1,15 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n";
 
-const STATS = [
-  { value: "10+", label: "Years serving Andhra Pradesh" },
-  { value: "25K+", label: "Trips completed" },
-  { value: "24/7", label: "WhatsApp support" },
-  { value: "4.9★", label: "Average rating" },
+const STATS: { value: string; labelKey: TranslationKey }[] = [
+  { value: "10+", labelKey: "about.stat1Label" },
+  { value: "25K+", labelKey: "about.stat2Label" },
+  { value: "24/7", labelKey: "about.stat3Label" },
+  { value: "4.9★", labelKey: "about.stat4Label" },
 ];
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="relative py-24 sm:py-32 bg-paper overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
@@ -19,28 +23,22 @@ export default function AboutSection() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">About us</p>
+          <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("about.eyebrow")}</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-6 leading-tight">
-            Local drivers, honest pricing, and routes out of Narasaraopet that only come from years of driving them.
+            {t("about.heading")}
           </h2>
           <p className="text-ivory/65 leading-relaxed mb-4">
-            Madina Travels started with a single sedan picking up families
-            from the Narasaraopet bus stand. Today our fleet covers everything
-            from quick local errands to outstation trips across Andhra
-            Pradesh and beyond — but the promise hasn&apos;t changed: a clean
-            car, a punctual driver, and a price you agreed to before you got
-            in.
+            {t("about.paragraph1")}
           </p>
           <p className="text-ivory/65 leading-relaxed">
-            No apps to download, no hidden fees. You book on WhatsApp, you
-            travel with someone who knows the roads, and you arrive on time.
+            {t("about.paragraph2")}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-5">
           {STATS.map((s, i) => (
             <motion.div
-              key={s.label}
+              key={s.labelKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -48,7 +46,7 @@ export default function AboutSection() {
               className="rounded-2xl border border-card-border bg-card p-7 card-shadow"
             >
               <p className="font-display text-4xl font-bold gold-gradient-text mb-1">{s.value}</p>
-              <p className="text-sm text-ivory/60">{s.label}</p>
+              <p className="text-sm text-ivory/60">{t(s.labelKey)}</p>
             </motion.div>
           ))}
         </div>

@@ -5,20 +5,23 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle } from "lucide-react";
 import Logo from "./Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "./LanguageProvider";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 
 const WHATSAPP_NUMBER = "919876543210";
 
-const LINKS = [
-  { href: "#fleet", label: "Fleet" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
-];
-
 export default function Navbar() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const LINKS = [
+    { href: "#fleet", label: t("nav.fleet") },
+    { href: "#how-it-works", label: t("nav.howItWorks") },
+    { href: "#about", label: t("nav.about") },
+    { href: "#contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -52,6 +55,9 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            <LanguageSwitcher className="hidden lg:block" />
+            <LanguageSwitcher compact className="lg:hidden" />
+
             <a
               href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
               target="_blank"
@@ -59,12 +65,12 @@ export default function Navbar() {
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-gold text-white hover:bg-gold-light transition-colors whitespace-nowrap"
             >
               <MessageCircle size={15} className="shrink-0" />
-              Reserve now
+              {t("nav.reserveNow")}
             </a>
 
             <button
               className="lg:hidden grid place-items-center w-10 h-10 rounded-full text-ivory hover:bg-charcoal transition-colors shrink-0"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
@@ -102,7 +108,7 @@ export default function Navbar() {
                 className="mt-4 inline-flex items-center justify-center gap-2 text-center text-sm font-medium px-5 py-3 rounded-full bg-gold text-white"
               >
                 <MessageCircle size={16} />
-                Reserve now
+                {t("nav.reserveNow")}
               </a>
             </div>
           </motion.div>

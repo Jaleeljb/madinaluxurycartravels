@@ -4,26 +4,29 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import type { Car } from "@/lib/types";
 import CarCard from "./CarCard";
+import { useLanguage } from "./LanguageProvider";
+
+const ALL_CATEGORIES = "__all__";
 
 export default function FleetSection({ cars }: { cars: Car[] }) {
-  const categories = useMemo(() => ["All", ...Array.from(new Set(cars.map((c) => c.category)))], [cars]);
-  const [active, setActive] = useState("All");
+  const { t } = useLanguage();
+  const categories = useMemo(() => [ALL_CATEGORIES, ...Array.from(new Set(cars.map((c) => c.category)))], [cars]);
+  const [active, setActive] = useState<string>(ALL_CATEGORIES);
 
-  const filtered = active === "All" ? cars : cars.filter((c) => c.category === active);
+  const filtered = active === ALL_CATEGORIES ? cars : cars.filter((c) => c.category === active);
 
   return (
     <section id="fleet" className="relative py-24 sm:py-32 bg-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
-            <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">The fleet</p>
+            <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold">
-              Vehicles for every party <span className="italic gold-gradient-text">size</span>
+              {t("fleet.headingPrefix")} <span className="italic gold-gradient-text">{t("fleet.headingEmphasis")}</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-ivory/60 leading-relaxed">
-            Every car arrives cleaned, fuelled and with a driver briefed on
-            your itinerary. Prices shown are daily rates in Indian Rupees.
+            {t("fleet.description")}
           </p>
         </div>
 
@@ -38,14 +41,14 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
                   : "border-card-border text-ivory/70 hover:border-gold/50 hover:text-gold-light"
               }`}
             >
-              {cat}
+              {cat === ALL_CATEGORIES ? t("fleet.categoryAll") : cat}
             </button>
           ))}
         </div>
 
         {filtered.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-card-border py-20 text-center text-ivory/50">
-            No vehicles in this category yet.
+            {t("fleet.noVehicles")}
           </div>
         ) : (
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
