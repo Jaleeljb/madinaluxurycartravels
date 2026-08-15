@@ -8,7 +8,7 @@ const WHATSAPP_NUMBER = "919876543210";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-paper pt-28 pb-16">
+    <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-paper pt-32 sm:pt-36 pb-16">
       {/* backdrop image — kept as a deliberate dark, dramatic moment even in the light theme */}
       <div className="absolute inset-0">
         <div
@@ -27,7 +27,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs tracking-[0.25em] text-[#E9C46A] uppercase mb-6"
+          className="font-mono text-xs tracking-[0.25em] text-[#6EE7B7] uppercase mb-6"
         >
           Chauffeured travel · Madina, Saudi Arabia
         </motion.p>
@@ -69,7 +69,7 @@ export default function Hero() {
           </a>
           <a
             href="#fleet"
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-white/90 hover:border-[#E9C46A] hover:text-[#E9C46A] transition"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-white/90 hover:border-[#6EE7B7] hover:text-[#6EE7B7] transition"
           >
             View the fleet
           </a>
@@ -113,7 +113,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/60 hover:text-[#E9C46A] transition-colors"
+        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/60 hover:text-[#6EE7B7] transition-colors"
       >
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase">Scroll</span>
         <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>

@@ -106,7 +106,7 @@ export default function CarForm({
           type="checkbox"
           checked={form.featured}
           onChange={(e) => update("featured", e.target.checked)}
-          className="w-4 h-4 accent-[#b8860b]"
+          className="w-4 h-4 accent-[#0f7a52]"
         />
         Feature this car
       </label>

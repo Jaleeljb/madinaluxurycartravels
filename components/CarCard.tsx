@@ -24,7 +24,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
-        <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widest bg-black/70 backdrop-blur px-2.5 py-1 rounded-full text-[#E9C46A] border border-gold/30">
+        <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widest bg-black/70 backdrop-blur px-2.5 py-1 rounded-full text-[#6EE7B7] border border-gold/30">
           {car.category}
         </span>
       </div>
