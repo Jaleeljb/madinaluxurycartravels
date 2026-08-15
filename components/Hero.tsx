@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, MessageCircle, Phone } from "lucide-react";
+import { ArrowDown, Phone } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
 
@@ -22,6 +22,28 @@ const HERO_CLIPS = [
       "https://images.pexels.com/videos/8630307/pexels-photo-8630307.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
 ];
+
+function AnimatedQuote({ text }: { text: string }) {
+  const words = text.split(" ");
+  return (
+    <p className="mt-5 font-display text-base sm:text-lg font-medium text-white/90 max-w-lg mx-auto">
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {words.map((word, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 + i * 0.06 }}
+            className="inline-block mr-[0.28em]"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </span>
+    </p>
+  );
+}
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -48,7 +70,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink pt-16">
       {/* Looping travel sequence — loading up, then on the road. One slow,
           steady zoom on load, crossfading cleanly between clips; scales to
           fill every screen size via object-cover, no fixed dimensions. */}
@@ -77,7 +99,7 @@ export default function Hero() {
         ))}
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/55 to-ink/90" />
+      <div className="absolute inset-0 bg-black/55" />
 
       {/* Centered copy */}
       <div className="relative mx-auto max-w-2xl px-6 sm:px-8 text-center">
@@ -85,7 +107,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-mono text-xs tracking-[0.3em] uppercase text-[#6EE7B7]/80"
+          className="font-semibold text-xs tracking-[0.3em] uppercase text-white/70"
         >
           Madina Travels · Narasaraopet
         </motion.p>
@@ -94,19 +116,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-4 font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white"
+          className="mt-4 font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-white"
         >
           {t("hero.headline")}
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.24 }}
-          className="mt-5 font-body text-base sm:text-lg text-white/75 max-w-lg mx-auto"
-        >
-          {t("hero.subtext")}
-        </motion.p>
+        <AnimatedQuote text={t("hero.quote")} />
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -118,14 +133,13 @@ export default function Hero() {
             href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full bg-gold text-white hover:bg-gold-light transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full bg-white text-ink hover:bg-white/90 transition-colors"
           >
-            <MessageCircle size={16} />
             {t("hero.reserveOnWhatsApp")}
           </a>
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border border-white/25 text-white hover:border-white/50 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 transition-colors"
           >
             <Phone size={16} />
             {t("hero.callUs")}
@@ -139,7 +153,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.5 }}
-        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/45 hover:text-[#6EE7B7] transition-colors"
+        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/50 hover:text-white transition-colors"
       >
         <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
           <ArrowDown size={18} />

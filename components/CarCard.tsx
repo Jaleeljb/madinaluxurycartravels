@@ -57,7 +57,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
-        <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widest bg-black/70 backdrop-blur px-2.5 py-1 rounded-full text-[#6EE7B7] border border-gold/30">
+        <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
           {car.category}
         </span>
       </div>
@@ -79,8 +79,8 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
         </div>
       </div>
 
-      {/* perforated ticket stub divider */}
-      <div className="relative ticket-perforation mx-5" />
+      {/* flat divider, Uber-style */}
+      <div className="border-t border-card-border mx-5" />
 
       <div className="flex items-center justify-between px-5 py-4">
         <div>

@@ -1,31 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
-// Editorial serif with real character (soft, high-contrast, great italics) —
-// used for headlines instead of the ubiquitous Playfair Display.
-const fraunces = Fraunces({
-  variable: "--font-display",
+// A single clean grotesque sans, used everywhere — headlines lean on
+// weight (800/900) rather than a separate display face, in keeping with
+// a flat, monochrome, Uber-style typographic system.
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-});
-
-// Warm, rounded humanist sans for body copy — friendlier and less generic
-// than Inter while staying just as readable.
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-// Ticket/boarding-pass mono for eyebrows, prices and labels — leans into the
-// perforated "ticket stub" motif already used across the booking cards.
-const spaceMono = Space_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -39,10 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${jakarta.variable} ${spaceMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

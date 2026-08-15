@@ -20,8 +20,7 @@ const translations = {
     "nav.language": "Language",
 
     "hero.headline": "Every trip, sorted — in one WhatsApp message.",
-    "hero.subtext":
-      "Sedans, SUVs and vans for local rides, outstation trips and airport transfers — pick a car, confirm the dates, and we take it from there.",
+    "hero.quote": "We show up. Every time.",
     "hero.reserveOnWhatsApp": "Reserve on WhatsApp",
     "hero.callUs": "Call us",
     "hero.scrollToFleet": "Scroll to fleet",
@@ -85,8 +84,7 @@ const translations = {
     "nav.language": "भाषा",
 
     "hero.headline": "हर सफ़र, एक व्हाट्सएप मैसेज में तय।",
-    "hero.subtext":
-      "लोकल राइड्स, आउटस्टेशन ट्रिप्स और एयरपोर्ट ट्रांसफर के लिए सेडान, SUV और वैन — गाड़ी चुनें, तारीखें तय करें, बाकी हम संभाल लेंगे।",
+    "hero.quote": "हम हर बार, समय पर पहुँचते हैं।",
     "hero.reserveOnWhatsApp": "व्हाट्सएप पर बुक करें",
     "hero.callUs": "कॉल करें",
     "hero.scrollToFleet": "फ्लीट तक स्क्रॉल करें",
@@ -151,8 +149,7 @@ const translations = {
     "nav.language": "భాష",
 
     "hero.headline": "ప్రతి ప్రయాణం, ఒకే వాట్సాప్ మెసేజ్‌లో సిద్ధం.",
-    "hero.subtext":
-      "లోకల్ రైడ్‌లు, అవుట్‌స్టేషన్ ట్రిప్‌లు మరియు ఎయిర్‌పోర్ట్ ట్రాన్స్‌ఫర్‌ల కోసం సెడాన్‌లు, SUVలు మరియు వ్యాన్‌లు — కారును ఎంచుకోండి, తేదీలను నిర్ధారించండి, మిగతాది మేము చూసుకుంటాం.",
+    "hero.quote": "మేము ప్రతిసారీ, సమయానికి వస్తాము.",
     "hero.reserveOnWhatsApp": "వాట్సాప్‌లో బుక్ చేయండి",
     "hero.callUs": "కాల్ చేయండి",
     "hero.scrollToFleet": "ఫ్లీట్‌కు స్క్రోల్ చేయండి",

@@ -22,7 +22,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold">
-              {t("fleet.headingPrefix")} <span className="italic gold-gradient-text">{t("fleet.headingEmphasis")}</span>
+              {t("fleet.headingPrefix")} <span className="gold-gradient-text">{t("fleet.headingEmphasis")}</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-ivory/60 leading-relaxed">

@@ -8,34 +8,10 @@ export function LogoMark({ size = 36 }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <circle cx="24" cy="24" r="23" stroke="currentColor" strokeOpacity="0.55" />
-      {/* minarets */}
-      <path d="M10 34V19.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M38 34V19.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="10" cy="16.5" r="2" fill="currentColor" />
-      <circle cx="38" cy="16.5" r="2" fill="currentColor" />
-      {/* dome */}
+      <rect width="48" height="48" rx="12" fill="currentColor" />
       <path
-        d="M16 34V25c0-4.4 3.6-8 8-8s8 3.6 8 8v9"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* finial + crescent */}
-      <path d="M24 17V11.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path
-        d="M25.6 11.2a2.3 2.3 0 1 1-2.2-3.7 3 3 0 1 0 2.2 3.7Z"
-        fill="currentColor"
-      />
-      {/* base line */}
-      <path d="M7 34h34" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      {/* door */}
-      <path
-        d="M21.5 34v-4.5a2.5 2.5 0 0 1 5 0V34"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
+        d="M13 33V16h4.2l6.8 9.6L30.8 16H35v17h-4.4V22.8l-6.6 9.3-6.6-9.3V33Z"
+        fill="var(--paper)"
       />
     </svg>
   );
@@ -43,7 +19,7 @@ export function LogoMark({ size = 36 }: { size?: number }) {
 
 export default function Logo({
   size = 34,
-  wordmarkClassName = "font-display text-lg sm:text-xl tracking-wide",
+  wordmarkClassName = "font-display text-lg sm:text-xl tracking-tight font-extrabold",
   showWordmark = true,
 }: {
   size?: number;
@@ -57,7 +33,7 @@ export default function Logo({
       </span>
       {showWordmark && (
         <span className={wordmarkClassName}>
-          Madina <span className="gold-gradient-text italic">Travels</span>
+          Madina <span className="gold-gradient-text">Travels</span>
         </span>
       )}
     </span>
