@@ -1,40 +1,78 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 
 const WHATSAPP_NUMBER = "919876543210";
 
-// Smooth highway footage — clearly reads as "on a trip", not just a parked car.
-const HERO_VIDEO =
-  "https://videos.pexels.com/video-files/854671/854671-hd_1920_1080_25fps.mp4";
-const HERO_POSTER =
-  "https://images.pexels.com/videos/854671/free-video-854671.jpg?auto=compress&cs=tinysrgb&w=1600";
+// Two clips from the same shoot, chained into one loop: bags go into the
+// car, then the ride begins. Reads clearly as "your trip, start to finish".
+const HERO_CLIPS = [
+  {
+    src: "https://videos.pexels.com/video-files/8629212/8629212-uhd_2560_1440_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/8629212/pexels-photo-8629212.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    src: "https://videos.pexels.com/video-files/8630307/8630307-uhd_2560_1440_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/8630307/pexels-photo-8630307.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+];
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const [active, setActive] = useState(0);
+  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+
+  useEffect(() => {
+    videoRefs.forEach((ref, i) => {
+      const el = ref.current;
+      if (!el) return;
+      if (i === active) {
+        el.currentTime = 0;
+        el.play().catch(() => {});
+      } else {
+        el.pause();
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active]);
+
+  function handleEnded() {
+    setActive((prev) => (prev + 1) % HERO_CLIPS.length);
+  }
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink">
-      {/* Looping travel video — one slow, steady zoom, nothing fussier */}
+      {/* Looping travel sequence — loading up, then on the road. One slow,
+          steady zoom on load, crossfading cleanly between clips; scales to
+          fill every screen size via object-cover, no fixed dimensions. */}
       <motion.div
         className="absolute inset-0"
         initial={{ scale: prefersReducedMotion ? 1 : 1.08 }}
         animate={{ scale: 1 }}
         transition={{ duration: 12, ease: "easeOut" }}
       >
-        <video
-          className="w-full h-full object-cover"
-          src={HERO_VIDEO}
-          poster={HERO_POSTER}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-        />
+        {HERO_CLIPS.map((clip, i) => (
+          <video
+            key={clip.src}
+            ref={videoRefs[i]}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              active === i ? "opacity-100" : "opacity-0"
+            }`}
+            src={clip.src}
+            poster={clip.poster}
+            autoPlay={i === 0}
+            muted
+            playsInline
+            preload={i === 0 ? "auto" : "metadata"}
+            onEnded={handleEnded}
+            aria-hidden="true"
+          />
+        ))}
       </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/55 to-ink/90" />
