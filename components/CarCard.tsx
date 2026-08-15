@@ -1,18 +1,49 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { MessageCircle, Users, Briefcase } from "lucide-react";
 import type { Car } from "@/lib/types";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
 
 export default function CarCard({ car, index }: { car: Car; index: number }) {
+  const prefersReducedMotion = useReducedMotion();
+  const cardRef = useRef<HTMLElement>(null);
+
+  const px = useMotionValue(0);
+  const py = useMotionValue(0);
+  const springX = useSpring(px, { stiffness: 220, damping: 20, mass: 0.4 });
+  const springY = useSpring(py, { stiffness: 220, damping: 20, mass: 0.4 });
+  const rotateX = useTransform(springY, [-0.5, 0.5], [8, -8]);
+  const rotateY = useTransform(springX, [-0.5, 0.5], [-8, 8]);
+
+  function handlePointerMove(e: React.PointerEvent<HTMLElement>) {
+    if (prefersReducedMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    px.set((e.clientX - rect.left) / rect.width - 0.5);
+    py.set((e.clientY - rect.top) / rect.height - 0.5);
+  }
+
+  function handlePointerLeave() {
+    px.set(0);
+    py.set(0);
+  }
+
   return (
     <motion.article
+      ref={cardRef}
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08 }}
       whileHover={{ y: -6 }}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      style={{
+        rotateX: prefersReducedMotion ? 0 : rotateX,
+        rotateY: prefersReducedMotion ? 0 : rotateY,
+        transformPerspective: 900,
+      }}
       className="group relative rounded-2xl overflow-hidden bg-card border border-card-border hover:border-gold/50 card-shadow transition-colors"
     >
       <div className="relative h-52 overflow-hidden">

@@ -1,15 +1,28 @@
 [
   {
+    "id": "c007",
+    "name": "Maruti Suzuki Dzire",
+    "category": "Economy Sedan",
+    "seats": 4,
+    "bags": 2,
+    "pricePerDay": 2200,
+    "currency": "\u20b9",
+    "image": "https://images.unsplash.com/photo-1729717069606-25da1561ea0b?q=80&w=1600&auto=format&fit=crop",
+    "whatsapp": "919876543210",
+    "description": "The everyday favourite \u2014 light on fuel, easy to park, and the most popular pick for local runs around Narasaraopet.",
+    "featured": true
+  },
+  {
     "id": "c001",
     "name": "Toyota Camry",
     "category": "Executive Sedan",
     "seats": 4,
     "bags": 3,
     "pricePerDay": 4500,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
-    "description": "Quiet, comfortable and reliable — the standard for airport transfers and business trips between Narasaraopet and Vijayawada.",
+    "description": "Quiet, comfortable and reliable \u2014 the standard for airport transfers and business trips between Narasaraopet and Vijayawada.",
     "featured": true
   },
   {
@@ -19,7 +32,7 @@
     "seats": 7,
     "bags": 6,
     "pricePerDay": 9800,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
     "description": "Full-size luxury for families and groups on longer outstation trips, with room for luggage and a smooth highway ride.",
@@ -32,10 +45,10 @@
     "seats": 3,
     "bags": 2,
     "pricePerDay": 19500,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
-    "description": "Our flagship chauffeur car — reserved for VIP transfers, weddings and business delegations.",
+    "description": "Our flagship chauffeur car \u2014 reserved for VIP transfers, weddings and business delegations.",
     "featured": true
   },
   {
@@ -45,10 +58,10 @@
     "seats": 11,
     "bags": 10,
     "pricePerDay": 7800,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
-    "description": "Built for group travel — spacious, air-conditioned, with a dedicated driver who knows every route out of Narasaraopet.",
+    "description": "Built for group travel \u2014 spacious, air-conditioned, with a dedicated driver who knows every route out of Narasaraopet.",
     "featured": false
   },
   {
@@ -58,7 +71,7 @@
     "seats": 4,
     "bags": 3,
     "pricePerDay": 6200,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
     "description": "A refined, whisper-quiet cabin for travellers who want comfort without ceremony.",
@@ -71,7 +84,7 @@
     "seats": 6,
     "bags": 5,
     "pricePerDay": 8600,
-    "currency": "₹",
+    "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1600&auto=format&fit=crop",
     "whatsapp": "919876543210",
     "description": "Powerful and dependable for highway routes and longer intercity transfers across Andhra Pradesh.",

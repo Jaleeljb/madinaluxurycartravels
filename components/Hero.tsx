@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const HERO_IMAGE =
@@ -8,14 +9,51 @@ const HERO_IMAGE =
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const springX = useSpring(pointerX, { stiffness: 60, damping: 20, mass: 0.6 });
+  const springY = useSpring(pointerY, { stiffness: 60, damping: 20, mass: 0.6 });
+
+  // 3D tilt of the background photo, following the pointer
+  const rotateX = useTransform(springY, [-0.5, 0.5], [4, -4]);
+  const rotateY = useTransform(springX, [-0.5, 0.5], [-5, 5]);
+  const imageX = useTransform(springX, [-0.5, 0.5], [-14, 14]);
+  const imageY = useTransform(springY, [-0.5, 0.5], [-10, 10]);
+
+  function handlePointerMove(e: React.PointerEvent<HTMLElement>) {
+    if (prefersReducedMotion || !sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    pointerX.set((e.clientX - rect.left) / rect.width - 0.5);
+    pointerY.set((e.clientY - rect.top) / rect.height - 0.5);
+  }
+
+  function handlePointerLeave() {
+    pointerX.set(0);
+    pointerY.set(0);
+  }
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink">
-      {/* Real car photograph */}
+    <section
+      ref={sectionRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink"
+      style={{ perspective: 1200 }}
+    >
+      {/* Real car photograph — 3D tilt follows the cursor */}
       <motion.div
-        className="absolute inset-0"
-        initial={{ scale: prefersReducedMotion ? 1 : 1.12 }}
-        animate={{ scale: 1 }}
+        className="absolute -inset-6"
+        style={{
+          rotateX: prefersReducedMotion ? 0 : rotateX,
+          rotateY: prefersReducedMotion ? 0 : rotateY,
+          x: prefersReducedMotion ? 0 : imageX,
+          y: prefersReducedMotion ? 0 : imageY,
+          transformStyle: "preserve-3d",
+        }}
+        initial={{ scale: prefersReducedMotion ? 1 : 1.14 }}
+        animate={{ scale: 1.04 }}
         transition={{ duration: 9, ease: "easeOut" }}
       >
         <div

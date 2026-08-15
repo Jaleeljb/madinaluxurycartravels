@@ -5,7 +5,8 @@ A car rental / travel booking site for **Madina Luxury Car Travels**, built with
 ## Features
 
 - Animated, fully responsive marketing site in a white-smoke and emerald theme (fleet grid with category filter, "how it works", about/stats, footer)
-- The hero is a real, full-bleed car photograph with a dark scrim and a single centered quotation — no marketing copy, buttons, or chips. Respects `prefers-reduced-motion` (skips the slow zoom-in on the photo).
+- The hero is a real, full-bleed car photograph with a dark scrim and a single centered quotation — no marketing copy, buttons, or chips. The photo has a subtle pointer-driven 3D tilt (moves with your cursor) and a slow zoom on load. Respects `prefers-reduced-motion`.
+- Right below the hero, an auto-scrolling marquee showcases every car in the fleet (pauses on hover); the main fleet grid cards also tilt in 3D toward the cursor
 - Floating pill-style navbar, always solid, so it stays legible over any content
 - A custom "Madina Travels" logo (mark + wordmark), used in the header, footer, and admin login — see `components/Logo.tsx` and `public/logo.svg` (also used as the favicon)
 - Prices are shown in Indian Rupees (₹) by default
