@@ -15,8 +15,8 @@ export default function Footer() {
               <Logo wordmarkClassName="font-display text-2xl font-semibold" />
             </div>
             <p className="text-sm text-ivory/60 max-w-sm leading-relaxed mb-6">
-              Chauffeured cars for Ziyarat, Umrah transfers and city travel —
-              booked instantly over WhatsApp.
+              Cars for local trips, outstation travel and airport transfers
+              across Andhra Pradesh — booked instantly over WhatsApp.
             </p>
             <a
               href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <MapPin size={14} className="text-gold" />
-                Al Haram Road, Madina, KSA
+                Narasaraopet, Andhra Pradesh 552601, India
               </li>
             </ul>
           </div>

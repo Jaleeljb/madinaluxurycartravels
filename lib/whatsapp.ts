@@ -7,7 +7,7 @@ export function waLink(number: string, message: string): string {
 
 export function bookingMessage(car: Car): string {
   return [
-    `Assalamu alaikum, I'd like to book a vehicle from Madina Luxury Car Travels.`,
+    `Hi, I'd like to book a vehicle from Madina Travels.`,
     ``,
     `Car: ${car.name} (${car.category})`,
     `Rate: ${car.currency}${car.pricePerDay.toLocaleString("en-IN")}/day`,
@@ -20,5 +20,5 @@ export function bookingMessage(car: Car): string {
 }
 
 export function generalEnquiryMessage(): string {
-  return `Assalamu alaikum, I'd like to enquire about your car rental fleet in Madina.`;
+  return `Hi, I'd like to enquire about your car rental fleet in Narasaraopet.`;
 }

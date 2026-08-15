@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 
 const STATS = [
-  { value: "12+", label: "Years on Madina roads" },
-  { value: "40K+", label: "Pilgrims transferred" },
+  { value: "10+", label: "Years serving Andhra Pradesh" },
+  { value: "25K+", label: "Trips completed" },
   { value: "24/7", label: "WhatsApp support" },
   { value: "4.9★", label: "Average rating" },
 ];
@@ -21,18 +21,19 @@ export default function AboutSection() {
         >
           <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">About us</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-6 leading-tight">
-            Local drivers, honest pricing, and a route through the city that only comes from years of it.
+            Local drivers, honest pricing, and routes out of Narasaraopet that only come from years of driving them.
           </h2>
           <p className="text-ivory/65 leading-relaxed mb-4">
-            Madina Luxury Car Travels started with a single sedan meeting
-            families at the airport. Today our fleet covers everything from
-            solo Ziyarat trips to full group transfers to Makkah — but the
-            promise hasn&apos;t changed: a clean car, a punctual driver, and a
-            price you agreed to before you got in.
+            Madina Travels started with a single sedan picking up families
+            from the Narasaraopet bus stand. Today our fleet covers everything
+            from quick local errands to outstation trips across Andhra
+            Pradesh and beyond — but the promise hasn&apos;t changed: a clean
+            car, a punctual driver, and a price you agreed to before you got
+            in.
           </p>
           <p className="text-ivory/65 leading-relaxed">
             No apps to download, no hidden fees. You book on WhatsApp, you
-            travel with someone who knows the city, and you arrive on time.
+            travel with someone who knows the roads, and you arrive on time.
           </p>
         </motion.div>
 

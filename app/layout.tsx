@@ -21,9 +21,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Madina Travels | Chauffeured Cars in Madina & Makkah",
+  title: "Madina Travels | Car Rentals & Outstation Travel in Narasaraopet",
   description:
-    "Book luxury sedans, SUVs and group vans for Ziyarat, Umrah transfers and city travel in Madina — reserve instantly over WhatsApp.",
+    "Book sedans, SUVs and group vans for local trips, outstation travel and airport transfers in Narasaraopet, Andhra Pradesh — reserve instantly over WhatsApp.",
   icons: {
     icon: "/logo.svg",
   },

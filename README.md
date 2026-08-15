@@ -4,7 +4,9 @@ A car rental / travel booking site for **Madina Luxury Car Travels**, built with
 
 ## Features
 
-- Animated, fully responsive marketing site in a light, warm-cream theme (hero, fleet grid with category filter, "how it works", about/stats, footer). The hero keeps a deliberate dark photo scrim for legibility — this is the one intentionally dark moment on an otherwise light site.
+- Animated, fully responsive marketing site in a white-smoke and emerald theme (fleet grid with category filter, "how it works", about/stats, footer)
+- The hero opens with a car animating from off-screen left to off-screen right along a road strip; once it exits, the headline, subtext, CTAs and route chips fade in. Respects `prefers-reduced-motion` — the animation is skipped and content shown immediately for anyone with that preference set.
+- Floating pill-style navbar, always solid, so it stays legible over any content
 - A custom "Madina Travels" logo (mark + wordmark), used in the header, footer, and admin login — see `components/Logo.tsx` and `public/logo.svg` (also used as the favicon)
 - Prices are shown in Indian Rupees (₹) by default
 - Every car card and the sticky WhatsApp button open a pre-filled WhatsApp chat (wa.me) with the car, rate and a booking template — no app install required for the customer
