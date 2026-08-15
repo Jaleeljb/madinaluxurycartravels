@@ -2,10 +2,8 @@
 
 import type { CSSProperties } from "react";
 import type { Car } from "@/lib/types";
-import { useLanguage } from "./LanguageProvider";
 
 export default function CarMarquee({ cars }: { cars: Car[] }) {
-  const { t } = useLanguage();
   if (cars.length === 0) return null;
 
   // Duplicate the list so the scroll loops seamlessly.
@@ -15,8 +13,8 @@ export default function CarMarquee({ cars }: { cars: Car[] }) {
   return (
     <section aria-label="Our full fleet" className="relative py-10 sm:py-14 bg-charcoal border-y border-card-border overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-6 flex items-center justify-between">
-        <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">{t("marquee.exploreFleet")}</p>
-        <p className="hidden sm:block text-xs text-muted">{t("marquee.hoverToPause")}</p>
+        <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase">Explore the fleet</p>
+        <p className="hidden sm:block text-xs text-muted">Hover a car to pause</p>
       </div>
 
       <div className="relative">

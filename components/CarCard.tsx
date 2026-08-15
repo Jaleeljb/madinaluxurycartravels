@@ -5,10 +5,8 @@ import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } fro
 import { MessageCircle, Users, Briefcase } from "lucide-react";
 import type { Car } from "@/lib/types";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
-import { useLanguage } from "./LanguageProvider";
 
 export default function CarCard({ car, index }: { car: Car; index: number }) {
-  const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
   const cardRef = useRef<HTMLElement>(null);
 
@@ -71,10 +69,10 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
         <div className="mt-4 flex items-center gap-4 text-xs text-muted font-mono">
           <span className="flex items-center gap-1.5">
-            <Users size={13} /> {car.seats} {t("car.seats")}
+            <Users size={13} /> {car.seats} seats
           </span>
           <span className="flex items-center gap-1.5">
-            <Briefcase size={13} /> {car.bags} {t("car.bags")}
+            <Briefcase size={13} /> {car.bags} bags
           </span>
         </div>
       </div>
@@ -84,7 +82,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="flex items-center justify-between px-5 py-4">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">{t("car.perDay")}</p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">Per day</p>
           <p className="font-display text-2xl font-bold text-gold-light">
             {car.currency}{car.pricePerDay.toLocaleString("en-IN")}
           </p>
@@ -96,7 +94,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-sm font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"
         >
           <MessageCircle size={16} />
-          {t("car.book")}
+          Book
         </a>
       </div>
     </motion.article>

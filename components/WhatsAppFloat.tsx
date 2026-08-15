@@ -3,19 +3,16 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
-import { useLanguage } from "./LanguageProvider";
 
 const WHATSAPP_NUMBER = "919876543210";
 
 export default function WhatsAppFloat() {
-  const { t } = useLanguage();
-
   return (
     <motion.a
       href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={t("whatsapp.chatAria")}
+      aria-label="Chat with us on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 16 }}

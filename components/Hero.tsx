@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, MessageCircle, Phone } from "lucide-react";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
-import { useLanguage } from "./LanguageProvider";
 
 const WHATSAPP_NUMBER = "919876543210";
 
@@ -24,7 +23,6 @@ const HERO_CLIPS = [
 ];
 
 export default function Hero() {
-  const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
   const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
@@ -96,7 +94,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.12 }}
           className="mt-4 font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white"
         >
-          {t("hero.headline")}
+          Every trip, sorted —<br className="hidden sm:block" /> in one WhatsApp message.
         </motion.h1>
 
         <motion.p
@@ -105,7 +103,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.24 }}
           className="mt-5 font-body text-base sm:text-lg text-white/75 max-w-lg mx-auto"
         >
-          {t("hero.subtext")}
+          Sedans, SUVs and vans for local rides, outstation trips and airport
+          transfers — pick a car, confirm the dates, and we take it from there.
         </motion.p>
 
         <motion.div
@@ -121,21 +120,20 @@ export default function Hero() {
             className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full bg-gold text-white hover:bg-gold-light transition-colors"
           >
             <MessageCircle size={16} />
-            {t("hero.reserveOnWhatsApp")}
+            Reserve on WhatsApp
           </a>
           <a
-            href={`tel:+${WHATSAPP_NUMBER}`}
+            href="#fleet"
             className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border border-white/25 text-white hover:border-white/50 transition-colors"
           >
-            <Phone size={16} />
-            {t("hero.callUs")}
+            See the fleet
           </a>
         </motion.div>
       </div>
 
       <motion.a
         href="#fleet"
-        aria-label={t("hero.scrollToFleet")}
+        aria-label="Scroll to fleet"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.5 }}
