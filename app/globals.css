@@ -14,9 +14,9 @@
   --muted: #6b756f;
   --danger: #c0392b;
 
-  --font-display: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: "Fraunces", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
 }
 
 @theme inline {

@@ -1,99 +1,96 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useReducedMotion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowDown, MessageCircle } from "lucide-react";
+import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1738996596694-93a6a2359b22?q=80&w=2600&auto=format&fit=crop";
+const WHATSAPP_NUMBER = "919876543210";
+
+// Smooth highway footage — clearly reads as "on a trip", not just a parked car.
+const HERO_VIDEO =
+  "https://videos.pexels.com/video-files/854671/854671-hd_1920_1080_25fps.mp4";
+const HERO_POSTER =
+  "https://images.pexels.com/videos/854671/free-video-854671.jpg?auto=compress&cs=tinysrgb&w=1600";
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const springX = useSpring(pointerX, { stiffness: 60, damping: 20, mass: 0.6 });
-  const springY = useSpring(pointerY, { stiffness: 60, damping: 20, mass: 0.6 });
-
-  // 3D tilt of the background photo, following the pointer
-  const rotateX = useTransform(springY, [-0.5, 0.5], [4, -4]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], [-5, 5]);
-  const imageX = useTransform(springX, [-0.5, 0.5], [-14, 14]);
-  const imageY = useTransform(springY, [-0.5, 0.5], [-10, 10]);
-
-  function handlePointerMove(e: React.PointerEvent<HTMLElement>) {
-    if (prefersReducedMotion || !sectionRef.current) return;
-    const rect = sectionRef.current.getBoundingClientRect();
-    pointerX.set((e.clientX - rect.left) / rect.width - 0.5);
-    pointerY.set((e.clientY - rect.top) / rect.height - 0.5);
-  }
-
-  function handlePointerLeave() {
-    pointerX.set(0);
-    pointerY.set(0);
-  }
 
   return (
-    <section
-      ref={sectionRef}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
-      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink"
-      style={{ perspective: 1200 }}
-    >
-      {/* Real car photograph — 3D tilt follows the cursor */}
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink">
+      {/* Looping travel video — one slow, steady zoom, nothing fussier */}
       <motion.div
-        className="absolute -inset-6"
-        style={{
-          rotateX: prefersReducedMotion ? 0 : rotateX,
-          rotateY: prefersReducedMotion ? 0 : rotateY,
-          x: prefersReducedMotion ? 0 : imageX,
-          y: prefersReducedMotion ? 0 : imageY,
-          transformStyle: "preserve-3d",
-        }}
-        initial={{ scale: prefersReducedMotion ? 1 : 1.14 }}
-        animate={{ scale: 1.04 }}
-        transition={{ duration: 9, ease: "easeOut" }}
+        className="absolute inset-0"
+        initial={{ scale: prefersReducedMotion ? 1 : 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 12, ease: "easeOut" }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
+        <video
+          className="w-full h-full object-cover"
+          src={HERO_VIDEO}
+          poster={HERO_POSTER}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink/85" />
-      <div className="absolute inset-0 bg-ink/20" />
 
-      {/* Centered quotation */}
-      <div className="relative mx-auto max-w-3xl px-6 sm:px-8 text-center">
-        <motion.span
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/55 to-ink/90" />
+
+      {/* Centered copy */}
+      <div className="relative mx-auto max-w-2xl px-6 sm:px-8 text-center">
+        <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="font-display text-6xl sm:text-7xl leading-none text-[#6EE7B7]/70 select-none"
-          aria-hidden="true"
+          transition={{ duration: 0.5 }}
+          className="font-mono text-xs tracking-[0.3em] uppercase text-[#6EE7B7]/80"
         >
-          &ldquo;
-        </motion.span>
+          Madina Travels · Narasaraopet
+        </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-2 font-display italic font-medium text-[1.85rem] leading-snug sm:text-4xl sm:leading-snug lg:text-5xl text-white"
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="mt-4 font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white"
         >
-          Comfort is not a luxury
-          <br className="hidden sm:block" /> — it&apos;s how we drive.
+          Every trip, sorted —<br className="hidden sm:block" /> in one WhatsApp message.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="mt-7 font-mono text-xs tracking-[0.3em] uppercase text-white/60"
+          transition={{ duration: 0.6, delay: 0.24 }}
+          className="mt-5 font-body text-base sm:text-lg text-white/75 max-w-lg mx-auto"
         >
-          Madina Travels · Narasaraopet
+          Sedans, SUVs and vans for local rides, outstation trips and airport
+          transfers — pick a car, confirm the dates, and we take it from there.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.36 }}
+          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3"
+        >
+          <a
+            href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full bg-gold text-white hover:bg-gold-light transition-colors"
+          >
+            <MessageCircle size={16} />
+            Reserve on WhatsApp
+          </a>
+          <a
+            href="#fleet"
+            className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border border-white/25 text-white hover:border-white/50 transition-colors"
+          >
+            See the fleet
+          </a>
+        </motion.div>
       </div>
 
       <motion.a
@@ -101,7 +98,7 @@ export default function Hero() {
         aria-label="Scroll to fleet"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 0.6 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
         className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/45 hover:text-[#6EE7B7] transition-colors"
       >
         <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>

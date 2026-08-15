@@ -1,23 +1,30 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+// Editorial serif with real character (soft, high-contrast, great italics) —
+// used for headlines instead of the ubiquitous Playfair Display.
+const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
-const inter = Inter({
+// Warm, rounded humanist sans for body copy — friendlier and less generic
+// than Inter while staying just as readable.
+const jakarta = Plus_Jakarta_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const plexMono = IBM_Plex_Mono({
+// Ticket/boarding-pass mono for eyebrows, prices and labels — leans into the
+// perforated "ticket stub" motif already used across the booking cards.
+const spaceMono = Space_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${jakarta.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
