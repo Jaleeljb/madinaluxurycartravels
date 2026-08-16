@@ -3,8 +3,13 @@ import { getCars, addCar } from "@/lib/data";
 import { SESSION_COOKIE, SESSION_VALUE } from "@/lib/auth";
 
 export async function GET() {
-  const cars = await getCars();
-  return NextResponse.json(cars);
+  try {
+    const cars = await getCars();
+    return NextResponse.json(cars);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Failed to load the fleet.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function POST(req: NextRequest) {

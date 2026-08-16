@@ -7,11 +7,19 @@ import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { getCars } from "@/lib/data";
+import type { Car } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const cars = await getCars();
+  let cars: Car[] = [];
+  try {
+    cars = await getCars();
+  } catch (err) {
+    // Never let a database hiccup take down the whole public site —
+    // log it server-side and render with an empty fleet instead.
+    console.error("Failed to load cars:", err);
+  }
 
   return (
     <>

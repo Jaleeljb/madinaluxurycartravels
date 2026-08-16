@@ -20,10 +20,22 @@ export default function AdminDashboard() {
 
   async function loadCars() {
     setLoading(true);
-    const res = await fetch("/api/cars", { cache: "no-store" });
-    const data = await res.json();
-    setCars(data);
-    setLoading(false);
+    setNotice("");
+    try {
+      const res = await fetch("/api/cars", { cache: "no-store" });
+      const data = await res.json();
+      if (!res.ok) {
+        setNotice(data.error || "Could not load the fleet.");
+        setCars([]);
+      } else {
+        setCars(data);
+      }
+    } catch {
+      setNotice("Network error while loading the fleet.");
+      setCars([]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {

@@ -16,6 +16,7 @@ A car rental / travel booking site for **Madina Luxury Car Travels**, built with
 - Every car card and the sticky WhatsApp button open a pre-filled WhatsApp chat (wa.me) with the car, rate and a booking template — no app install required for the customer
 - `/admin` — password-protected login
 - `/admin/dashboard` — add, edit and delete cars (name, category, seats, bags, price, currency, WhatsApp number, description, featured flag). Car photos are added by drag-and-drop or click-to-browse — there's no image URL field; uploaded photos are resized/compressed client-side and stored as the car's image.
+- The fleet is stored in a real database (Redis via Upstash) — see "Database setup" below. Local development works out of the box with zero setup, falling back to a local file.
 - Route protected by middleware/proxy using an HTTP-only session cookie
 
 ## Run locally
@@ -32,7 +33,8 @@ Visit http://localhost:3000. Admin login is at `/admin` — the default password
 1. Push this project to a GitHub/GitLab/Bitbucket repo.
 2. In Vercel (vercel.com/new), import the repo — it auto-detects Next.js, no build settings needed.
 3. Add an environment variable: `ADMIN_PASSWORD` = your chosen password.
-4. Deploy.
+4. Set up the database so admin changes actually save — see "Database setup" just below. (The site will deploy and work for browsing without this, but admin add/edit/delete needs it.)
+5. Deploy.
 
 Or from the CLI:
 
@@ -41,19 +43,29 @@ npm i -g vercel
 vercel
 ```
 
-### Important: making admin edits permanent in production
+### Database setup — required for admin changes to save once deployed
 
-This starter stores the fleet in `data/cars.json` and the admin dashboard edits that file directly. That works perfectly during local development, but Vercel's deployed filesystem is read-only at runtime — like almost all serverless hosts. So once deployed, an admin add/edit/delete will fail with a clear error message instead of silently losing data.
+The fleet is stored in a real database (Redis, via [Upstash](https://upstash.com)) — every add/edit/delete goes through it, so changes persist across deployments and are visible to everyone immediately. Without it configured, the site falls back to writing `data/cars.json` on disk, which works fine locally but **fails on Vercel** (and most hosts), because their filesystem is read-only at runtime — this is what was causing admin changes to silently not save.
 
-To make admin changes persist in production, swap the storage layer in `lib/data.ts` for a real database. The functions (`getCars`, `addCar`, `updateCar`, `deleteCar`) are already isolated in that one file, so this is a small change. Good options that pair well with Vercel:
+It takes about two minutes and the free tier is enough for a small fleet:
 
-- Vercel Postgres / Neon — a few lines with `@vercel/postgres` or `drizzle-orm`
-- Vercel Blob — store `cars.json` as a blob and read/write it there
-- Supabase — free Postgres + instant REST client
+1. In your Vercel project, open the **Storage** tab → **Create Database** → choose **Upstash** → **Redis** (or go directly to [upstash.com](https://upstash.com), sign up free, and create a Redis database).
+2. If you provisioned it via Vercel's Storage tab, connect it to this project — it will automatically add the two environment variables below. If you created it directly on upstash.com instead, copy the **REST URL** and **REST Token** from its dashboard and add them as environment variables on your Vercel project (Settings → Environment Variables):
+   ```
+   UPSTASH_REDIS_REST_URL=...
+   UPSTASH_REDIS_REST_TOKEN=...
+   ```
+3. Redeploy (or just wait for the env vars to apply to the next deploy).
 
-Say the word and this can be wired up for any of these once you tell me which you'd like — it just needs a database you create and its connection string as an env var.
+The first time the app runs with the database connected, it automatically seeds it from the starter fleet in `data/cars.json` — nothing to migrate by hand. From then on, `data/cars.json` is only used as that one-time seed and as the local-dev fallback; the database is the source of truth.
 
-Note that uploaded car photos are stored as compressed base64 images directly inside `data/cars.json` (see `lib/image.ts` and `components/admin/ImageDropzone.tsx`), so this same database swap will also carry photos with it — no separate file storage needed for a small fleet, though a dedicated image host (Vercel Blob, Cloudinary, S3) is worth it once you have many cars or want faster page loads.
+For local development, you can either:
+- Skip this entirely — `npm run dev` works out of the box, writing to `data/cars.json` on disk, or
+- Add the same two variables to a `.env.local` file (copy `.env.example`) to develop against the same real database you use in production.
+
+The storage logic lives in `lib/db.ts` (the Redis client) and `lib/data.ts` (reads/writes) if you'd rather swap in a different database later — both are small, isolated files.
+
+One thing worth knowing as your fleet grows: uploaded car photos are stored as compressed base64 images inside each car record (see `lib/image.ts` and `components/admin/ImageDropzone.tsx`), and the whole fleet lives under a single Redis key. That's simple and fast for a small number of cars, but if you eventually list many cars with large photos, moving images to dedicated file storage (e.g. Vercel Blob) keeps things quick and avoids bumping into any per-key size limits.
 
 ## Editing the WhatsApp number
 
@@ -77,8 +89,9 @@ app/
   api/login/route.ts         Session cookie login/logout
 components/                UI components (Hero, CarCard, FleetSection, etc.)
 components/admin/          Admin-only components (CarForm)
-lib/data.ts                Car data access (file-backed — see note above)
+lib/db.ts                  Redis (Upstash) client — the real database
+lib/data.ts                Car data access (database-backed, with a local-file fallback for dev — see "Database setup" above)
 lib/whatsapp.ts            wa.me link builders
-data/cars.json              Seed fleet data
+data/cars.json              Seed fleet data (used to seed the database on first run, and as the local-dev fallback)
 proxy.ts                    Route protection for /admin/dashboard
 ```

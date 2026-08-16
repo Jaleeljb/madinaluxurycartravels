@@ -16,8 +16,6 @@
     "id": "c001",
     "name": "Toyota Camry",
     "category": "Executive Sedan",
-    "seats": 4,
-    "bags": 3,
     "pricePerDay": 4500,
     "currency": "\u20b9",
     "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1600&auto=format&fit=crop",
