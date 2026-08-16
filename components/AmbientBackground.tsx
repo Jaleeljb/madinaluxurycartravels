@@ -36,10 +36,24 @@ const PRESETS: Record<
   how: {
     orbs: [
       {
-        className: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/[0.04]",
-        size: 620,
-        animate: { scale: [1, 1.1, 1], x: [0, 18, 0] },
+        className: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/[0.05]",
+        size: 640,
+        animate: { scale: [1, 1.12, 1], x: [0, 20, 0] },
         duration: 20,
+      },
+      {
+        className: "-top-28 -left-20 bg-white/[0.045]",
+        size: 380,
+        animate: { x: [0, 24, 0], y: [0, 20, 0], scale: [1, 1.07, 1] },
+        duration: 16,
+        delay: 0.6,
+      },
+      {
+        className: "-bottom-24 -right-16 bg-white/[0.04]",
+        size: 420,
+        animate: { x: [0, -22, 0], y: [0, -18, 0], scale: [1, 1.08, 1] },
+        duration: 18,
+        delay: 1.2,
       },
     ],
   },
