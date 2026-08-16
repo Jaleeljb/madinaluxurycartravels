@@ -22,12 +22,12 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
-            <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold">
+            <p className="font-mono text-xs md:text-sm lg:text-base tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold">
               {t("fleet.headingPrefix")} <span className="gold-gradient-text">{t("fleet.headingEmphasis")}</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-ivory/60 leading-relaxed">
+          <p className="max-w-sm text-sm lg:text-base text-ivory/60 leading-relaxed">
             {t("fleet.description")}
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`text-sm px-4 py-2 rounded-full border transition-colors ${
+              className={`text-sm lg:text-base px-4 py-2 rounded-full border transition-colors ${
                 active === cat
                   ? "bg-gold text-white border-gold"
                   : "border-card-border text-ivory/70 hover:border-gold/50 hover:text-gold-light"

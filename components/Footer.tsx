@@ -25,14 +25,14 @@ export default function Footer() {
                 wordmarkClassName="font-display text-2xl font-semibold text-white"
               />
             </div>
-            <p className="text-sm text-white/55 max-w-sm leading-relaxed mb-6">
+            <p className="text-sm lg:text-base text-white/55 max-w-sm leading-relaxed mb-6">
               {t("footer.tagline")}
             </p>
             <a
               href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] text-ink font-medium px-5 py-3 hover:brightness-105 transition"
+              className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] text-ink font-medium px-5 py-3 lg:text-base hover:brightness-105 transition"
             >
               <MessageCircle size={16} />
               {t("footer.messageWhatsApp")}
@@ -40,8 +40,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.navigate")}</p>
-            <ul className="space-y-3 text-sm text-white/70">
+            <p className="text-xs lg:text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.navigate")}</p>
+            <ul className="space-y-3 text-sm lg:text-base text-white/70">
               <li><a href="#fleet" className="hover:text-white transition-colors">{t("nav.fleet")}</a></li>
               <li><a href="#how-it-works" className="hover:text-white transition-colors">{t("nav.howItWorks")}</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">{t("nav.about")}</a></li>
@@ -50,8 +50,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.contact")}</p>
-            <ul className="space-y-3 text-sm text-white/70">
+            <p className="text-xs lg:text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.contact")}</p>
+            <ul className="space-y-3 text-sm lg:text-base text-white/70">
               <li>
                 <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
                   <Phone size={14} className="text-white/50" />

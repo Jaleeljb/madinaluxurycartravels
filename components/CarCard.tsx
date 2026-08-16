@@ -83,10 +83,10 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-xl font-semibold leading-tight">{car.name}</h3>
+          <h3 className="font-display text-xl lg:text-2xl font-semibold leading-tight">{car.name}</h3>
         </div>
 
-        <p className="mt-2 text-sm text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
+        <p className="mt-2 text-sm lg:text-base text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
 
         <div className="mt-4 flex items-center gap-4 text-xs text-muted font-mono">
           <span className="flex items-center gap-1.5">
@@ -126,7 +126,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
       <div className="flex items-center justify-between px-5 py-4">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">{t("car.perDay")}</p>
-          <p className="font-display text-2xl font-bold text-gold-light">
+          <p className="font-display text-2xl lg:text-3xl font-bold text-gold-light">
             {car.currency}{car.pricePerDay.toLocaleString("en-IN")}
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           href={waLink(car.whatsapp, bookingMessage(car, dateRange))}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-sm font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"
+          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-sm lg:text-base font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"
         >
           <MessageCircle size={16} />
           {t("car.book")}
