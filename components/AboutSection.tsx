@@ -104,7 +104,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <p className="font-mono text-xs md:text-sm lg:text-base tracking-[0.25em] text-gold uppercase mb-3">{t("about.eyebrow")}</p>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold mb-5 leading-tight">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-5 leading-tight">
             {t("about.heading")}
           </h2>
           <p className="text-ivory/65 lg:text-lg leading-relaxed mb-8 max-w-md">
@@ -122,7 +122,7 @@ export default function AboutSection() {
                 whileHover={{ y: -3 }}
                 className="rounded-2xl border border-card-border bg-card p-6 card-shadow"
               >
-                <p className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold gold-gradient-text mb-1">{s.value}</p>
+                <p className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold gold-gradient-text mb-1">{s.value}</p>
                 <p className="text-sm lg:text-base text-ivory/60">{t(s.labelKey)}</p>
               </motion.div>
             ))}

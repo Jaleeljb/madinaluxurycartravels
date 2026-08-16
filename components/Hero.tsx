@@ -16,7 +16,7 @@ const HERO_IMAGE =
 // useLayoutEffect warns on the server — fall back to useEffect there.
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-const HEADLINE_MAX_PX = 80;
+const HEADLINE_MAX_PX = 46;
 const HEADLINE_MIN_PX = 13;
 // A small safety margin so integer scrollWidth rounding never lets the
 // text edge past the container on any script or device.
@@ -95,7 +95,7 @@ function FitHeadline({ text }: { text: string }) {
       </span>
 
       {/* Tablet and up: bigger, free to wrap across two lines. */}
-      <span className="hidden md:inline-block headline-color-shift font-display font-black tracking-tight leading-[1.05] md:text-5xl lg:text-6xl xl:text-7xl">
+      <span className="hidden md:inline-block headline-color-shift font-display font-black tracking-tight leading-[1.05] md:text-3xl lg:text-4xl xl:text-5xl">
         {text}
       </span>
     </motion.h1>
@@ -111,7 +111,7 @@ function Tagline({ text }: { text: string }) {
         initial={{ x: -40, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="tagline-shimmer inline-block font-display text-sm sm:text-lg lg:text-xl xl:text-2xl font-medium whitespace-nowrap"
+        className="tagline-shimmer inline-block font-display text-sm sm:text-base lg:text-lg xl:text-xl font-medium whitespace-nowrap"
       >
         {text}
       </motion.p>

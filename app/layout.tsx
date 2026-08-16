@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description:
     "Book sedans, SUVs and group vans for local trips, outstation travel and airport transfers in Narasaraopet, Andhra Pradesh — reserve instantly over WhatsApp.",
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon.png",
   },
 };
 

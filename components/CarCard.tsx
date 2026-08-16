@@ -83,7 +83,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-xl lg:text-2xl font-semibold leading-tight">{car.name}</h3>
+          <h3 className="font-display text-lg lg:text-xl font-semibold leading-tight">{car.name}</h3>
         </div>
 
         <p className="mt-2 text-sm lg:text-base text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
@@ -126,7 +126,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
       <div className="flex items-center justify-between px-5 py-4">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">{t("car.perDay")}</p>
-          <p className="font-display text-2xl lg:text-3xl font-bold text-gold-light">
+          <p className="font-display text-xl lg:text-2xl font-bold text-gold-light">
             {car.currency}{car.pricePerDay.toLocaleString("en-IN")}
           </p>
         </div>

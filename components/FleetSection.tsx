@@ -23,7 +23,7 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <p className="font-mono text-xs md:text-sm lg:text-base tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold">
               {t("fleet.headingPrefix")} <span className="gold-gradient-text">{t("fleet.headingEmphasis")}</span>
             </h2>
           </div>

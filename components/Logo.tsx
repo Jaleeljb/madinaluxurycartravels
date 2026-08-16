@@ -1,62 +1,75 @@
+import Image from "next/image";
+
+// Source assets: components/Logo.tsx renders the real Madina Car Travels
+// logo (an "M" monogram with a car silhouette worked into its base, next
+// to the serif "MADINA CAR TRAVELS" wordmark). Files live in /public and
+// come in dark-glyph (for light surfaces) and white-glyph (for dark
+// surfaces, e.g. the black footer) pairs, each already trimmed tight.
+const ICON_RATIO = 240 / 182; // logo-icon-*.png
+const FULL_RATIO = 812 / 182; // logo-full-*.png
+
+/** Icon-only mark (the "M" + car glyph, no wordmark) — used in tight
+ *  spaces like the admin login/dashboard header. */
 export function LogoMark({
   size = 36,
   variant = "dark",
 }: {
   size?: number;
-  /** "dark" = black badge, white glyph (default, for light backgrounds).
-   *  "light" = white badge, black glyph (for dark backgrounds, e.g. the footer). */
+  /** "dark" = black glyph, for light backgrounds (default).
+   *  "light" = white glyph, for dark backgrounds (e.g. the footer). */
   variant?: "dark" | "light";
 }) {
-  const badge = variant === "dark" ? "#000000" : "#ffffff";
-  const glyph = variant === "dark" ? "#ffffff" : "#000000";
-
+  const src = variant === "dark" ? "/logo-icon-black.png" : "/logo-icon-white.png";
+  const width = Math.round(size * ICON_RATIO);
   return (
-    <svg
-      width={size}
+    <Image
+      src={src}
+      alt="Madina Car Travels"
+      width={width}
       height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect width="48" height="48" rx="12" fill={badge} />
-      {/* An "M" whose center stroke drops into a location pin — the mark
-          reads as both a monogram and a destination, in one line. */}
-      <path
-        d="M12 32V15.5L24 26.5L36 15.5"
-        stroke={glyph}
-        strokeWidth="3.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M36 15.5V32" stroke={glyph} strokeWidth="3.4" strokeLinecap="round" />
-      <path d="M24 26.5V35" stroke={glyph} strokeWidth="3.4" strokeLinecap="round" />
-      <circle cx="24" cy="38.5" r="2.6" fill={glyph} />
-    </svg>
+      className="shrink-0 object-contain"
+      style={{ height: size, width: "auto" }}
+      priority
+    />
   );
 }
 
+/** Full logo lockup — the "M" + car mark, divider, and the "MADINA CAR
+ *  TRAVELS" wordmark, all as one fixed piece of brand artwork. This is
+ *  the primary logo used in the navbar and footer. */
 export default function Logo({
   size = 34,
-  wordmarkClassName = "font-display text-lg sm:text-xl tracking-tight font-extrabold",
   showWordmark = true,
   variant = "dark",
+  className = "",
 }: {
   size?: number;
-  wordmarkClassName?: string;
+  /** When false, renders just the icon mark (e.g. a very tight mobile
+   *  header) instead of the full icon + wordmark lockup. */
   showWordmark?: boolean;
   variant?: "dark" | "light";
+  className?: string;
+  /** Accepted for backwards compatibility with older call sites; the
+   *  wordmark is now baked into the logo artwork itself so this has no
+   *  effect. */
+  wordmarkClassName?: string;
 }) {
+  if (!showWordmark) {
+    return <LogoMark size={size} variant={variant} />;
+  }
+
+  const src = variant === "dark" ? "/logo-full-black.png" : "/logo-full-white.png";
+  const width = Math.round(size * FULL_RATIO);
+
   return (
-    <span className="flex items-center gap-2.5">
-      <span className="shrink-0">
-        <LogoMark size={size} variant={variant} />
-      </span>
-      {showWordmark && (
-        <span className={wordmarkClassName}>
-          Madina <span className="gold-gradient-text">Travels</span>
-        </span>
-      )}
-    </span>
+    <Image
+      src={src}
+      alt="Madina Car Travels"
+      width={width}
+      height={size}
+      className={`shrink-0 object-contain ${className}`}
+      style={{ height: size, width: "auto" }}
+      priority
+    />
   );
 }

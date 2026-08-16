@@ -20,10 +20,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr] gap-12">
           <div>
             <div className="mb-4">
-              <Logo
-                variant="light"
-                wordmarkClassName="font-display text-2xl font-semibold text-white"
-              />
+              <Logo variant="light" size={38} />
             </div>
             <p className="text-sm lg:text-base text-white/55 max-w-sm leading-relaxed mb-6">
               {t("footer.tagline")}

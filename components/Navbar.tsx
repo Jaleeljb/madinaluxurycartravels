@@ -39,7 +39,7 @@ export default function Navbar() {
       >
         <nav className="flex items-center justify-between gap-3 pl-4 pr-2.5 py-2.5 sm:pl-6 sm:pr-3 sm:py-3">
           <Link href="/" className="shrink-0">
-            <Logo size={30} wordmarkClassName="font-display text-base sm:text-lg lg:text-xl tracking-tight font-extrabold whitespace-nowrap" />
+            <Logo size={32} />
           </Link>
 
           <div className="hidden lg:flex items-center gap-7 shrink-0">
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-base font-medium text-ivory/70 hover:text-ink transition-colors whitespace-nowrap"
+                className="text-sm font-medium text-ivory/70 hover:text-ink transition-colors whitespace-nowrap"
               >
                 {l.label}
               </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
               href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center text-sm lg:text-base font-semibold px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-gold text-white hover:bg-gold-light transition-colors whitespace-nowrap"
+              className="hidden sm:inline-flex items-center text-sm font-semibold px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-gold text-white hover:bg-gold-light transition-colors whitespace-nowrap"
             >
               {t("nav.reserveNow")}
             </a>
@@ -94,7 +94,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-base font-medium text-ivory/85 hover:text-ink transition-colors py-2.5 border-b border-card-border last:border-0"
+                  className="text-sm font-medium text-ivory/85 hover:text-ink transition-colors py-2.5 border-b border-card-border last:border-0"
                 >
                   {l.label}
                 </a>

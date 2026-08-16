@@ -50,7 +50,7 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, delay: 0.05 }}
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold max-w-lg lg:max-w-2xl mb-16 text-white"
+          className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold max-w-lg lg:max-w-2xl mb-16 text-white"
         >
           {t("how.heading")}
         </motion.h2>
@@ -81,7 +81,7 @@ export default function HowItWorks() {
                 {/* huge faded number watermark */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -top-3 right-3 font-display font-black text-7xl text-white/[0.05] select-none"
+                  className="pointer-events-none absolute -top-3 right-3 font-display font-black text-5xl text-white/[0.05] select-none"
                 >
                   0{i + 1}
                 </span>
@@ -108,7 +108,7 @@ export default function HowItWorks() {
                   </span>
                 </div>
 
-                <h3 className="relative font-display text-xl lg:text-2xl font-semibold mb-2 text-white">
+                <h3 className="relative font-display text-lg lg:text-xl font-semibold mb-2 text-white">
                   {t(step.titleKey)}
                 </h3>
                 <p className="relative text-sm lg:text-base text-white/55 leading-relaxed">{t(step.bodyKey)}</p>
