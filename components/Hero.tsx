@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, Phone } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
@@ -22,6 +22,88 @@ const HERO_CLIPS = [
       "https://images.pexels.com/videos/8630307/pexels-photo-8630307.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
 ];
+
+// useLayoutEffect warns on the server — fall back to useEffect there.
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+const HEADLINE_MAX_PX = 80;
+const HEADLINE_MIN_PX = 13;
+// A small safety margin so integer scrollWidth rounding never lets the
+// text edge past the container on any script or device.
+const HEADLINE_FIT_SAFETY = 0.96;
+
+// The hero headline: always exactly one line, on every screen and in
+// every language. A hidden clone (fixed at the max size) measures the
+// text's true rendered width; we scale from that to fit the available
+// space. The visible span's font-size is purely React-state-driven, so
+// there's no manual DOM mutation racing with re-renders.
+function FitHeadline({ text }: { text: string }) {
+  const containerRef = useRef<HTMLHeadingElement>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
+  const [fontSize, setFontSize] = useState(HEADLINE_MAX_PX);
+
+  useIsoLayoutEffect(() => {
+    const container = containerRef.current;
+    const measure = measureRef.current;
+    if (!container || !measure) return;
+
+    function recalc() {
+      const containerWidth = container!.clientWidth;
+      const naturalWidth = measure!.scrollWidth;
+      if (!containerWidth || !naturalWidth) return;
+      const scale = containerWidth / naturalWidth;
+      const next = Math.min(
+        HEADLINE_MAX_PX,
+        Math.max(HEADLINE_MIN_PX, HEADLINE_MAX_PX * scale * HEADLINE_FIT_SAFETY)
+      );
+      setFontSize(next);
+    }
+
+    recalc();
+    const ro = new ResizeObserver(recalc);
+    ro.observe(container);
+    window.addEventListener("orientationchange", recalc);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("orientationchange", recalc);
+    };
+  }, [text]);
+
+  return (
+    <motion.h1
+      ref={containerRef}
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.12 }}
+      className="relative mt-4 w-full"
+    >
+      {/* Invisible, fixed-size clone used only to measure natural width */}
+      <span
+        ref={measureRef}
+        aria-hidden="true"
+        className="font-display font-black tracking-tight inline-block"
+        style={{
+          position: "absolute",
+          visibility: "hidden",
+          whiteSpace: "nowrap",
+          pointerEvents: "none",
+          left: 0,
+          top: 0,
+          fontSize: HEADLINE_MAX_PX,
+        }}
+      >
+        {text}
+      </span>
+
+      <span
+        className="headline-color-shift font-display font-black tracking-tight inline-block"
+        style={{ whiteSpace: "nowrap", fontSize, lineHeight: 1.05 }}
+      >
+        {text}
+      </span>
+    </motion.h1>
+  );
+}
 
 // The hero tagline as one unified line — it slides in and shimmers
 // purely along the horizontal axis (never a per-word vertical cascade).
@@ -97,7 +179,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/55" />
 
       {/* Centered copy */}
-      <div className="relative mx-auto max-w-2xl px-6 sm:px-8 text-center">
+      <div className="relative mx-auto max-w-5xl w-full min-w-0 px-6 sm:px-8 text-center">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,14 +189,7 @@ export default function Hero() {
           Madina Travels · Narasaraopet
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.12 }}
-          className="headline-color-shift mt-4 font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight"
-        >
-          {t("hero.headline")}
-        </motion.h1>
+        <FitHeadline text={t("hero.headline")} />
 
         <Tagline text={t("hero.quote")} />
 
