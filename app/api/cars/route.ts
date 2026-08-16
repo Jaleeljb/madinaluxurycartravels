@@ -38,6 +38,8 @@ export async function POST(req: NextRequest) {
       whatsapp: body.whatsapp,
       description: body.description,
       featured: Boolean(body.featured),
+      available: body.available !== undefined ? Boolean(body.available) : true,
+      unavailableDates: Array.isArray(body.unavailableDates) ? body.unavailableDates : [],
     });
     return NextResponse.json(car, { status: 201 });
   } catch (err) {

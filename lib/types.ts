@@ -10,6 +10,8 @@ export interface Car {
   whatsapp: string;
   description: string;
   featured: boolean;
+  available: boolean;
+  unavailableDates: string[]; // ISO "YYYY-MM-DD" dates already booked/blocked
 }
 
 export type CarInput = Omit<Car, "id">;

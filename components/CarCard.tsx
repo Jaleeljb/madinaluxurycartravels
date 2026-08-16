@@ -1,16 +1,20 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
-import { MessageCircle, Users, Briefcase } from "lucide-react";
+import { CalendarDays, MessageCircle, Users, Briefcase } from "lucide-react";
 import type { Car } from "@/lib/types";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
+import AvailabilityCalendar from "./AvailabilityCalendar";
+import { LOCALE_BY_LANGUAGE, formatRange, type DateRange } from "@/lib/dates";
 
 export default function CarCard({ car, index }: { car: Car; index: number }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
   const cardRef = useRef<HTMLElement>(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [dateRange, setDateRange] = useState<DateRange | null>(null);
 
   const px = useMotionValue(0);
   const py = useMotionValue(0);
@@ -60,6 +64,21 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
         <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
           {car.category}
         </span>
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
+          <span className="relative flex w-2 h-2">
+            <span
+              className={`absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping ${
+                car.available ? "bg-[#06C167]" : "bg-[var(--danger)]"
+              }`}
+            />
+            <span
+              className={`relative inline-flex w-2 h-2 rounded-full ${
+                car.available ? "bg-[#06C167]" : "bg-[var(--danger)]"
+              }`}
+            />
+          </span>
+          {car.available ? t("car.available") : t("car.unavailable")}
+        </span>
       </div>
 
       <div className="p-5">
@@ -77,7 +96,29 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
             <Briefcase size={13} /> {car.bags} {t("car.bags")}
           </span>
         </div>
+
+        <button
+          type="button"
+          onClick={() => setCalendarOpen(true)}
+          className="mt-4 w-full flex items-center justify-between gap-2 rounded-xl border border-card-border px-3.5 py-2.5 text-sm text-ivory/70 hover:border-gold/50 hover:text-gold-light transition-colors"
+        >
+          <span className="flex items-center gap-2 truncate">
+            <CalendarDays size={15} className="shrink-0" />
+            <span className="truncate">
+              {dateRange ? formatRange(dateRange, LOCALE_BY_LANGUAGE[language]) : t("calendar.selectDates")}
+            </span>
+          </span>
+          {dateRange && <span className="text-xs text-gold-light shrink-0">{t("calendar.change")}</span>}
+        </button>
       </div>
+
+      <AvailabilityCalendar
+        open={calendarOpen}
+        unavailableDates={car.unavailableDates}
+        value={dateRange}
+        onChange={setDateRange}
+        onClose={() => setCalendarOpen(false)}
+      />
 
       {/* flat divider, Uber-style */}
       <div className="border-t border-card-border mx-5" />
@@ -90,7 +131,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           </p>
         </div>
         <a
-          href={waLink(car.whatsapp, bookingMessage(car))}
+          href={waLink(car.whatsapp, bookingMessage(car, dateRange))}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-sm font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"

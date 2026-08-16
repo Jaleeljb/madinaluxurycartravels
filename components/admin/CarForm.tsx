@@ -15,6 +15,8 @@ const EMPTY: CarInput = {
   whatsapp: "",
   description: "",
   featured: false,
+  available: true,
+  unavailableDates: [],
 };
 
 export default function CarForm({
@@ -27,11 +29,26 @@ export default function CarForm({
   onCancel?: () => void;
 }) {
   const [form, setForm] = useState<CarInput>(car ? { ...car } : EMPTY);
+  const [newBlockedDate, setNewBlockedDate] = useState("");
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
   function update<K extends keyof CarInput>(key: K, value: CarInput[K]) {
     setForm((f) => ({ ...f, [key]: value }));
+  }
+
+  function addBlockedDate() {
+    if (!newBlockedDate) return;
+    setForm((f) =>
+      f.unavailableDates.includes(newBlockedDate)
+        ? f
+        : { ...f, unavailableDates: [...f.unavailableDates, newBlockedDate].sort() }
+    );
+    setNewBlockedDate("");
+  }
+
+  function removeBlockedDate(date: string) {
+    setForm((f) => ({ ...f, unavailableDates: f.unavailableDates.filter((d) => d !== date) }));
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -110,6 +127,56 @@ export default function CarForm({
         />
         Feature this car
       </label>
+
+      <label className="flex items-center gap-2.5 text-sm text-ivory/70 sm:col-span-2">
+        <input
+          type="checkbox"
+          checked={form.available}
+          onChange={(e) => update("available", e.target.checked)}
+          className="w-4 h-4 accent-black"
+        />
+        Currently available for new bookings
+      </label>
+
+      <Field label="Blocked / already-booked dates" full>
+        <div className="flex items-center gap-2">
+          <input
+            type="date"
+            value={newBlockedDate}
+            onChange={(e) => setNewBlockedDate(e.target.value)}
+            min={new Date().toISOString().slice(0, 10)}
+            className="input"
+          />
+          <button
+            type="button"
+            onClick={addBlockedDate}
+            disabled={!newBlockedDate}
+            className="shrink-0 rounded-full border border-card-border px-4 py-2 text-sm text-ivory/70 hover:border-gold/50 transition-colors disabled:opacity-40"
+          >
+            Add
+          </button>
+        </div>
+        {form.unavailableDates.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-1">
+            {form.unavailableDates.map((date) => (
+              <span
+                key={date}
+                className="inline-flex items-center gap-1.5 text-xs bg-charcoal border border-card-border rounded-full pl-3 pr-2 py-1.5"
+              >
+                {date}
+                <button
+                  type="button"
+                  onClick={() => removeBlockedDate(date)}
+                  aria-label={`Remove ${date}`}
+                  className="grid place-items-center w-4 h-4 rounded-full text-muted hover:text-danger transition-colors"
+                >
+                  ×
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
+      </Field>
 
       {error && <p className="sm:col-span-2 text-sm text-danger">{error}</p>}
 

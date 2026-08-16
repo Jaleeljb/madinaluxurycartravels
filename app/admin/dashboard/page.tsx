@@ -153,11 +153,26 @@ export default function AdminDashboard() {
                               Featured
                             </span>
                           )}
+                          <span
+                            className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-mono px-2 py-0.5 rounded-full border ${
+                              car.available
+                                ? "bg-[#06C167]/10 text-[#06C167] border-[#06C167]/30"
+                                : "bg-danger/10 text-danger border-danger/30"
+                            }`}
+                          >
+                            <span className={`w-1.5 h-1.5 rounded-full ${car.available ? "bg-[#06C167]" : "bg-danger"}`} />
+                            {car.available ? "Available" : "Unavailable"}
+                          </span>
                         </div>
                         <p className="text-xs text-muted font-mono mt-1">
                           {car.category} · {car.seats} seats · {car.bags} bags · {car.currency}{car.pricePerDay.toLocaleString("en-IN")}/day
                         </p>
                         <p className="text-xs text-muted mt-1">WhatsApp: {car.whatsapp}</p>
+                        {car.unavailableDates.length > 0 && (
+                          <p className="text-xs text-muted mt-1">
+                            Blocked dates: {car.unavailableDates.join(", ")}
+                          </p>
+                        )}
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <button
