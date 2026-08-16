@@ -19,7 +19,7 @@ const translations = {
     "nav.closeMenu": "Close menu",
     "nav.language": "Language",
 
-    "hero.headline": "Every trip, sorted — in one WhatsApp message.",
+    "hero.headline": "Every road tells a story. Let us drive yours.",
     "hero.quote": "We show up. Every time.",
     "hero.reserveOnWhatsApp": "Reserve on WhatsApp",
     "hero.callUs": "Call us",
@@ -92,7 +92,7 @@ const translations = {
     "nav.closeMenu": "मेनू बंद करें",
     "nav.language": "भाषा",
 
-    "hero.headline": "हर सफ़र, एक व्हाट्सएप मैसेज में तय।",
+    "hero.headline": "हर रास्ता एक कहानी कहता है। इस बार, आपकी।",
     "hero.quote": "हम हर बार, समय पर पहुँचते हैं।",
     "hero.reserveOnWhatsApp": "व्हाट्सएप पर बुक करें",
     "hero.callUs": "कॉल करें",
@@ -166,7 +166,7 @@ const translations = {
     "nav.closeMenu": "మెనూ మూసివేయండి",
     "nav.language": "భాష",
 
-    "hero.headline": "ప్రతి ప్రయాణం, ఒకే వాట్సాప్ మెసేజ్‌లో సిద్ధం.",
+    "hero.headline": "ప్రతి దారి ఒక కథ చెబుతుంది. ఈసారి, మీది.",
     "hero.quote": "మేము ప్రతిసారీ, సమయానికి వస్తాము.",
     "hero.reserveOnWhatsApp": "వాట్సాప్‌లో బుక్ చేయండి",
     "hero.callUs": "కాల్ చేయండి",
