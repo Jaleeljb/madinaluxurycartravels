@@ -63,12 +63,12 @@ const translations = {
     "how.step3Body": "Your driver meets you at the agreed point, on schedule, every time.",
 
     "about.eyebrow": "About us",
-    "about.heading":
-      "Local drivers, honest pricing, and routes out of Narasaraopet that only come from years of driving them.",
+    "about.heading": "Built on local roads. Driven by trust.",
     "about.paragraph1":
-      "Madina Travels started with a single sedan picking up families from the Narasaraopet bus stand. Today our fleet covers everything from quick local errands to outstation trips across Andhra Pradesh and beyond — but the promise hasn't changed: a clean car, a punctual driver, and a price you agreed to before you got in.",
-    "about.paragraph2":
-      "No apps to download, no hidden fees. You book on WhatsApp, you travel with someone who knows the roads, and you arrive on time.",
+      "10+ years moving families and travellers across Andhra Pradesh — clean cars, punctual drivers, and a price you agree to upfront.",
+    "about.ownerRole": "Founder, Madina Travels",
+    "about.ownerQuote": "Every trip, like it's our own family's.",
+    "about.badgeYears": "Years",
     "about.stat1Label": "Years serving Andhra Pradesh",
     "about.stat2Label": "Trips completed",
     "about.stat3Label": "WhatsApp support",
@@ -140,12 +140,12 @@ const translations = {
     "how.step3Body": "आपका ड्राइवर तय जगह पर, हर बार समय पर आपसे मिलता है।",
 
     "about.eyebrow": "हमारे बारे में",
-    "about.heading":
-      "स्थानीय ड्राइवर, ईमानदार कीमतें, और नरसरावपेट से निकलने वाले वे रास्ते जो सालों के अनुभव से ही जाने जा सकते हैं।",
+    "about.heading": "स्थानीय सड़कों से बना भरोसा।",
     "about.paragraph1":
-      "मदीना ट्रैवल्स की शुरुआत नरसरावपेट बस स्टैंड से परिवारों को लाने वाली एक सेडान से हुई थी। आज हमारा फ्लीट छोटे लोकल कामों से लेकर आंध्र प्रदेश और उससे आगे तक की आउटस्टेशन यात्राओं तक सब कुछ कवर करता है — लेकिन वादा वही है: एक साफ़ गाड़ी, समय के पाबंद ड्राइवर, और वह कीमत जो आपने बैठने से पहले तय की थी।",
-    "about.paragraph2":
-      "कोई ऐप डाउनलोड करने की ज़रूरत नहीं, कोई छुपी हुई फीस नहीं। आप व्हाट्सएप पर बुक करते हैं, रास्तों को जानने वाले किसी के साथ सफ़र करते हैं, और समय पर पहुँचते हैं।",
+      "10+ सालों से हम आंध्र प्रदेश भर में परिवारों और यात्रियों को पहुंचा रहे हैं — साफ़ गाड़ियाँ, समय के पाबंद ड्राइवर, और पहले से तय कीमत।",
+    "about.ownerRole": "संस्थापक, मदीना ट्रैवल्स",
+    "about.ownerQuote": "हर सफ़र, अपने परिवार जैसा।",
+    "about.badgeYears": "साल",
     "about.stat1Label": "आंध्र प्रदेश की सेवा में वर्ष",
     "about.stat2Label": "पूरी की गई यात्राएं",
     "about.stat3Label": "व्हाट्सएप सहायता",
@@ -217,12 +217,12 @@ const translations = {
     "how.step3Body": "మీ డ్రైవర్ ఒప్పుకున్న ప్రదేశంలో, ప్రతిసారీ సమయానికి మిమ్మల్ని కలుస్తారు.",
 
     "about.eyebrow": "మా గురించి",
-    "about.heading":
-      "స్థానిక డ్రైవర్లు, నిజాయితీ ధరలు, మరియు నరసరావుపేట నుండి వెళ్ళే మార్గాలు — సంవత్సరాల అనుభవంతో మాత్రమే తెలిసేవి.",
+    "about.heading": "స్థానిక రోడ్లపై నిర్మించిన నమ్మకం.",
     "about.paragraph1":
-      "మదీనా ట్రావెల్స్ నరసరావుపేట బస్ స్టాండ్ నుండి కుటుంబాలను తీసుకెళ్ళే ఒకే ఒక సెడాన్‌తో మొదలైంది. ఈ రోజు మా ఫ్లీట్ చిన్న లోకల్ పనుల నుండి ఆంధ్రప్రదేశ్ మరియు ఆవలకు వెళ్ళే అవుట్‌స్టేషన్ ప్రయాణాల వరకు అన్నింటినీ కవర్ చేస్తుంది — కానీ మా వాగ్దానం మారలేదు: శుభ్రమైన కారు, సమయపాలన పాటించే డ్రైవర్, మరియు మీరు ఎక్కే ముందే నిర్ణయించుకున్న ధర.",
-    "about.paragraph2":
-      "డౌన్‌లోడ్ చేయాల్సిన యాప్‌లు లేవు, దాచిన ఫీజులు లేవు. మీరు వాట్సాప్‌లో బుక్ చేస్తారు, రోడ్లు తెలిసిన వ్యక్తితో ప్రయాణిస్తారు, మరియు సమయానికి చేరుకుంటారు.",
+      "10+ సంవత్సరాలుగా ఆంధ్రప్రదేశ్ అంతటా కుటుంబాలను, ప్రయాణికులను చేరవేస్తున్నాం — శుభ్రమైన కార్లు, సమయపాలన పాటించే డ్రైవర్లు, ముందుగా నిర్ణయించిన ధర.",
+    "about.ownerRole": "వ్యవస్థాపకుడు, మదీనా ట్రావెల్స్",
+    "about.ownerQuote": "ప్రతి ప్రయాణం, మా కుటుంబం లానే.",
+    "about.badgeYears": "సంవత్సరాలు",
     "about.stat1Label": "ఆంధ్రప్రదేశ్‌కు సేవ చేస్తున్న సంవత్సరాలు",
     "about.stat2Label": "పూర్తయిన ప్రయాణాలు",
     "about.stat3Label": "వాట్సాప్ సపోర్ట్",

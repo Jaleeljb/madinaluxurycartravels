@@ -46,17 +46,24 @@ const PRESETS: Record<
   about: {
     orbs: [
       {
-        className: "-bottom-20 -right-20 bg-black/[0.045]",
-        size: 420,
-        animate: { x: [0, -22, 0], y: [0, -20, 0], scale: [1, 1.07, 1] },
-        duration: 17,
+        className: "-bottom-24 -right-20 bg-black/[0.05]",
+        size: 460,
+        animate: { x: [0, -26, 0], y: [0, -22, 0], scale: [1, 1.08, 1] },
+        duration: 16,
       },
       {
-        className: "-top-16 -left-16 bg-black/[0.035]",
-        size: 320,
-        animate: { x: [0, 20, 0], y: [0, 16, 0], scale: [1, 1.05, 1] },
-        duration: 15,
+        className: "-top-16 -left-16 bg-black/[0.04]",
+        size: 340,
+        animate: { x: [0, 22, 0], y: [0, 18, 0], scale: [1, 1.06, 1] },
+        duration: 14,
         delay: 0.8,
+      },
+      {
+        className: "top-1/3 left-1/2 -translate-x-1/2 bg-black/[0.025]",
+        size: 300,
+        animate: { x: [0, 16, 0], y: [0, -14, 0], scale: [1, 1.1, 1] },
+        duration: 12,
+        delay: 1.6,
       },
     ],
   },
