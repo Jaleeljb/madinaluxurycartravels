@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import type { Car } from "@/lib/types";
 import CarCard from "./CarCard";
+import AmbientBackground from "./AmbientBackground";
 import { useLanguage } from "./LanguageProvider";
 
 const ALL_CATEGORIES = "__all__";
@@ -16,8 +17,9 @@ export default function FleetSection({ cars }: { cars: Car[] }) {
   const filtered = active === ALL_CATEGORIES ? cars : cars.filter((c) => c.category === active);
 
   return (
-    <section id="fleet" className="relative py-24 sm:py-32 bg-paper">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="fleet" className="relative py-24 sm:py-32 bg-paper overflow-hidden">
+      <AmbientBackground variant="fleet" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("fleet.eyebrow")}</p>

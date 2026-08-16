@@ -5,10 +5,13 @@ A car rental / travel booking site for **Madina Luxury Car Travels**, built with
 ## Features
 
 - Fully responsive marketing site in a flat black-and-white theme, styled after Uber's product marketing pages (bold sans typography, monochrome palette, minimal decoration)
-- The hero is a real, full-bleed car photograph with a dark scrim and a single centered quotation — no marketing copy, buttons, or chips. The photo has a subtle pointer-driven 3D tilt (moves with your cursor) and a slow zoom on load. Respects `prefers-reduced-motion`.
-- Right below the hero, an auto-scrolling marquee showcases every car in the fleet (pauses on hover); the main fleet grid cards also tilt in 3D toward the cursor
+- The hero is a looping travel video (bags in, then on the road) with a bold headline and a single-line quote that animates in word-by-word. Respects `prefers-reduced-motion`.
+- Right below the hero, an auto-scrolling marquee showcases every car in the fleet (pauses on hover); the main fleet grid cards tilt in 3D toward the cursor
+- Subtle, slow-drifting ambient blur shapes animate quietly behind the fleet, "how it works", about, and marquee sections for a bit of premium depth without ever distracting from the content — see `components/AmbientBackground.tsx`
 - Floating pill-style navbar, always solid, so it stays legible over any content
-- A custom "Madina Travels" logo (mark + wordmark), used in the header, footer, and admin login — see `components/Logo.tsx` and `public/logo.svg` (also used as the favicon)
+- A custom logo mark — an "M" that resolves into a location pin — plus the "Madina Travels" wordmark, used in the header, footer, and admin login. See `components/Logo.tsx` and `public/logo.svg` (also the favicon). It inverts automatically (black badge/white glyph, or white badge/black glyph) depending on the background it sits on.
+- Black footer, with the inverted (white) logo variant and a matching ambient background
+- Multi-language support (English, Hindi, Telugu) via `components/LanguageProvider.tsx` and `lib/i18n.ts` — switch with the language picker in the navbar
 - Prices are shown in Indian Rupees (₹) by default
 - Every car card and the sticky WhatsApp button open a pre-filled WhatsApp chat (wa.me) with the car, rate and a booking template — no app install required for the customer
 - `/admin` — password-protected login

@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
         className="w-full max-w-sm"
       >
         <div className="flex flex-col items-center mb-8">
-          <span className="text-gold mb-4">
+          <span className="mb-4">
             <LogoMark size={44} />
           </span>
           <h1 className="font-display text-2xl font-semibold text-center">

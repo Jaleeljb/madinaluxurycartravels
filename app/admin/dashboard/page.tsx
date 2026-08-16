@@ -54,7 +54,7 @@ export default function AdminDashboard() {
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-gold">
+            <span>
               <LogoMark size={38} />
             </span>
             <div>

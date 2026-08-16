@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageProvider";
+import AmbientBackground from "./AmbientBackground";
 import type { TranslationKey } from "@/lib/i18n";
 
 const STATS: { value: string; labelKey: TranslationKey }[] = [
@@ -16,7 +17,8 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative py-24 sm:py-32 bg-paper overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <AmbientBackground variant="about" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}

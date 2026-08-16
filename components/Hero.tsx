@@ -70,7 +70,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink pt-16">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink pt-6 sm:pt-8">
       {/* Looping travel sequence — loading up, then on the road. One slow,
           steady zoom on load, crossfading cleanly between clips; scales to
           fill every screen size via object-cover, no fixed dimensions. */}

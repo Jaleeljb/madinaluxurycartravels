@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Search, MessageCircle, CarFront } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
+import AmbientBackground from "./AmbientBackground";
 import type { TranslationKey } from "@/lib/i18n";
 
 const STEPS: { icon: typeof Search; titleKey: TranslationKey; bodyKey: TranslationKey }[] = [
@@ -15,8 +16,9 @@ export default function HowItWorks() {
   const { t } = useLanguage();
 
   return (
-    <section id="how-it-works" className="relative py-24 sm:py-32 bg-charcoal border-y border-card-border">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="how-it-works" className="relative py-24 sm:py-32 bg-charcoal border-y border-card-border overflow-hidden">
+      <AmbientBackground variant="how" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <p className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-3">{t("how.eyebrow")}</p>
         <h2 className="font-display text-4xl sm:text-5xl font-semibold max-w-lg mb-14">
           {t("how.heading")}
