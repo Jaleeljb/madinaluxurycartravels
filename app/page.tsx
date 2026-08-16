@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CarMarquee from "@/components/CarMarquee";
 import FleetSection from "@/components/FleetSection";
 import HowItWorks from "@/components/HowItWorks";
 import AboutSection from "@/components/AboutSection";
@@ -26,7 +25,6 @@ export default async function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <CarMarquee cars={cars} />
         <FleetSection cars={cars} />
         <HowItWorks />
         <AboutSection />

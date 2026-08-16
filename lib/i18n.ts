@@ -25,9 +25,6 @@ const translations = {
     "hero.callUs": "Call us",
     "hero.scrollToFleet": "Scroll to fleet",
 
-    "marquee.exploreFleet": "Explore the fleet",
-    "marquee.hoverToPause": "Hover a car to pause",
-
     "fleet.eyebrow": "The fleet",
     "fleet.headingPrefix": "Vehicles for every party",
     "fleet.headingEmphasis": "size",
@@ -100,9 +97,6 @@ const translations = {
     "hero.reserveOnWhatsApp": "व्हाट्सएप पर बुक करें",
     "hero.callUs": "कॉल करें",
     "hero.scrollToFleet": "फ्लीट तक स्क्रॉल करें",
-
-    "marquee.exploreFleet": "फ्लीट देखें",
-    "marquee.hoverToPause": "रोकने के लिए किसी गाड़ी पर होवर करें",
 
     "fleet.eyebrow": "फ्लीट",
     "fleet.headingPrefix": "हर ग्रुप के लिए सही",
@@ -177,9 +171,6 @@ const translations = {
     "hero.reserveOnWhatsApp": "వాట్సాప్‌లో బుక్ చేయండి",
     "hero.callUs": "కాల్ చేయండి",
     "hero.scrollToFleet": "ఫ్లీట్‌కు స్క్రోల్ చేయండి",
-
-    "marquee.exploreFleet": "ఫ్లీట్‌ను చూడండి",
-    "marquee.hoverToPause": "ఆపడానికి ఏదైనా కారుపై హోవర్ చేయండి",
 
     "fleet.eyebrow": "ఫ్లీట్",
     "fleet.headingPrefix": "ప్రతి గ్రూప్‌కు సరైన",

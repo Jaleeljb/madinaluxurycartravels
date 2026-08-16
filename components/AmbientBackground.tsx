@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-type Variant = "fleet" | "how" | "about" | "footer" | "marquee";
+type Variant = "fleet" | "how" | "about" | "footer";
 
 const PRESETS: Record<
   Variant,
@@ -95,16 +95,6 @@ const PRESETS: Record<
         animate: { x: [0, -24, 0], y: [0, -18, 0], scale: [1, 1.06, 1] },
         duration: 21,
         delay: 1.2,
-      },
-    ],
-  },
-  marquee: {
-    orbs: [
-      {
-        className: "top-1/2 left-1/3 -translate-y-1/2 bg-black/[0.035]",
-        size: 340,
-        animate: { x: [0, 24, 0], scale: [1, 1.06, 1] },
-        duration: 14,
       },
     ],
   },

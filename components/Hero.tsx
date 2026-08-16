@@ -23,25 +23,20 @@ const HERO_CLIPS = [
   },
 ];
 
-function AnimatedQuote({ text }: { text: string }) {
-  const words = text.split(" ");
+// The hero tagline as one unified line — it slides in and shimmers
+// purely along the horizontal axis (never a per-word vertical cascade).
+function Tagline({ text }: { text: string }) {
   return (
-    <p className="mt-5 font-display text-base sm:text-lg font-medium text-white/90 max-w-lg mx-auto">
-      <span className="sr-only">{text}</span>
-      <span aria-hidden="true">
-        {words.map((word, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 + i * 0.06 }}
-            className="inline-block mr-[0.28em]"
-          >
-            {word}
-          </motion.span>
-        ))}
-      </span>
-    </p>
+    <div className="mt-5 overflow-hidden">
+      <motion.p
+        initial={{ x: -40, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="tagline-shimmer inline-block font-display text-sm sm:text-lg font-medium whitespace-nowrap"
+      >
+        {text}
+      </motion.p>
+    </div>
   );
 }
 
@@ -121,7 +116,7 @@ export default function Hero() {
           {t("hero.headline")}
         </motion.h1>
 
-        <AnimatedQuote text={t("hero.quote")} />
+        <Tagline text={t("hero.quote")} />
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
