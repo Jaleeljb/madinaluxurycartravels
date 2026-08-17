@@ -14,7 +14,7 @@ const ALL_CATEGORIES = "__all__";
 // below handles that gracefully). Any custom category typed into the
 // admin form that isn't in this list is appended automatically, so
 // nothing entered there ever gets hidden.
-const FLEET_CATEGORIES = ["4 Seater", "7 Seater", "12 Seater", "24 Seater", "Luxury Cars"];
+const FLEET_CATEGORIES = ["4 Seater", "7 Seater", "12/24 Seater", "Luxury Cars"];
 
 export default function FleetSection({ cars }: { cars: Car[] }) {
   const { t } = useLanguage();
