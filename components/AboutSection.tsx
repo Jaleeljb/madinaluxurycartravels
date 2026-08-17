@@ -58,16 +58,19 @@ export default function AboutSection() {
               */}
               <img
                 src="/owner-placeholder.jpg"
-                alt={t("about.ownerRole")}
+                alt={`${t("about.ownerName")} — ${t("about.ownerRole")}`}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
 
               <div className="absolute bottom-0 inset-x-0 p-5">
-                <p className="text-white font-display font-semibold leading-tight">
+                <p className="text-white font-display text-lg font-semibold leading-tight">
+                  {t("about.ownerName")}
+                </p>
+                <p className="text-gold text-xs font-medium tracking-wide uppercase mt-1">
                   {t("about.ownerRole")}
                 </p>
-                <p className="text-white/70 text-xs mt-1.5 flex items-start gap-1.5">
+                <p className="text-white/70 text-xs mt-2 flex items-start gap-1.5">
                   <Quote className="w-3.5 h-3.5 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{t("about.ownerQuote")}</span>
                 </p>

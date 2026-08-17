@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Madina Travels | Car Rentals & Outstation Travel in Narasaraopet",
+  title: "Madina Car Travels | Car Rentals & Outstation Travel in Narasaraopet",
   description:
     "Book sedans, SUVs and group vans for local trips, outstation travel and airport transfers in Narasaraopet, Andhra Pradesh — reserve instantly over WhatsApp.",
   icons: {

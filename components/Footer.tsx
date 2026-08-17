@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm lg:text-xs text-white/40">
-          <p>© {new Date().getFullYear()} Madina Travels. {t("footer.rightsReserved")}</p>
+          <p>© {new Date().getFullYear()} Madina Car Travels. {t("footer.rightsReserved")}</p>
           <p>{t("footer.tagline2")}</p>
         </div>
       </div>

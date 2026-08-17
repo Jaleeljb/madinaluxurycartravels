@@ -63,7 +63,8 @@ const translations = {
     "about.heading": "Built on local roads. Driven by trust.",
     "about.paragraph1":
       "10+ years moving families and travellers across Andhra Pradesh — clean cars, punctual drivers, and a price you agree to upfront.",
-    "about.ownerRole": "Founder, Madina Travels",
+    "about.ownerName": "Yaseen",
+    "about.ownerRole": "Founder, Madina Car Travels",
     "about.ownerQuote": "Every trip, like it's our own family's.",
     "about.badgeYears": "Years",
     "about.stat1Label": "Years serving Andhra Pradesh",
@@ -137,7 +138,8 @@ const translations = {
     "about.heading": "स्थानीय सड़कों से बना भरोसा।",
     "about.paragraph1":
       "10+ सालों से हम आंध्र प्रदेश भर में परिवारों और यात्रियों को पहुंचा रहे हैं — साफ़ गाड़ियाँ, समय के पाबंद ड्राइवर, और पहले से तय कीमत।",
-    "about.ownerRole": "संस्थापक, मदीना ट्रैवल्स",
+    "about.ownerName": "यासीन",
+    "about.ownerRole": "संस्थापक, मदीना कार ट्रैवल्स",
     "about.ownerQuote": "हर सफ़र, अपने परिवार जैसा।",
     "about.badgeYears": "साल",
     "about.stat1Label": "आंध्र प्रदेश की सेवा में वर्ष",
@@ -211,7 +213,8 @@ const translations = {
     "about.heading": "స్థానిక రోడ్లపై నిర్మించిన నమ్మకం.",
     "about.paragraph1":
       "10+ సంవత్సరాలుగా ఆంధ్రప్రదేశ్ అంతటా కుటుంబాలను, ప్రయాణికులను చేరవేస్తున్నాం — శుభ్రమైన కార్లు, సమయపాలన పాటించే డ్రైవర్లు, ముందుగా నిర్ణయించిన ధర.",
-    "about.ownerRole": "వ్యవస్థాపకుడు, మదీనా ట్రావెల్స్",
+    "about.ownerName": "యాసీన్",
+    "about.ownerRole": "వ్యవస్థాపకుడు, మదీనా కార్ ట్రావెల్స్",
     "about.ownerQuote": "ప్రతి ప్రయాణం, మా కుటుంబం లానే.",
     "about.badgeYears": "సంవత్సరాలు",
     "about.stat1Label": "ఆంధ్రప్రదేశ్‌కు సేవ చేస్తున్న సంవత్సరాలు",

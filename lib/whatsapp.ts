@@ -18,7 +18,7 @@ export function bookingMessage(car: Car, dateRange?: DateRange | null): string {
   }
 
   return [
-    `Hi, I'd like to book a vehicle from Madina Travels.`,
+    `Hi, I'd like to book a vehicle from Madina Car Travels.`,
     ``,
     `Car: ${car.name} (${car.category})`,
     `Rate: ${car.currency}${car.pricePerDay.toLocaleString("en-IN")}/day`,

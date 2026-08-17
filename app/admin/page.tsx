@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
             <LogoMark size={44} />
           </span>
           <h1 className="font-display text-2xl font-semibold text-center">
-            Madina Travels <span className="gold-gradient-text">Admin</span>
+            Madina Car Travels <span className="gold-gradient-text">Admin</span>
           </h1>
           <p className="text-sm text-ivory/50 mt-2 text-center">
             Sign in to manage the fleet

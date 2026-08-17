@@ -5,8 +5,8 @@ import Image from "next/image";
 // to the serif "MADINA CAR TRAVELS" wordmark). Files live in /public and
 // come in dark-glyph (for light surfaces) and white-glyph (for dark
 // surfaces, e.g. the black footer) pairs, each already trimmed tight.
-const ICON_RATIO = 240 / 182; // logo-icon-*.png
-const FULL_RATIO = 812 / 182; // logo-full-*.png
+const ICON_RATIO = 480 / 307; // logo-icon-*.png
+const FULL_RATIO = 1278 / 307; // logo-full-*.png
 
 /** Icon-only mark (the "M" + car glyph, no wordmark) — used in tight
  *  spaces like the admin login/dashboard header. */

@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, MapPin, Phone } from "lucide-react";
+import { ArrowDown, MapPin, Phone, MessageCircle } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n";
@@ -160,7 +160,7 @@ export default function Hero() {
           className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-4 py-1.5 font-semibold text-xs lg:text-sm tracking-[0.25em] uppercase text-white/90"
         >
           <MapPin size={12} className="shrink-0 text-white/70" />
-          Madina Travels · Narasaraopet
+          Madina Car Travels · Narasaraopet
         </motion.p>
 
         <FitHeadline text={t("hero.headline")} />
@@ -177,20 +177,25 @@ export default function Hero() {
             href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink shadow-lg shadow-black/20 hover:bg-white/90 transition-colors"
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            className="group relative inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink shadow-[0_8px_24px_-4px_rgba(0,0,0,0.35)] ring-1 ring-white/40 hover:shadow-[0_12px_32px_-4px_rgba(37,211,102,0.45)] hover:ring-[#25D366]/50 transition-shadow duration-300 overflow-hidden"
           >
-            {t("hero.reserveOnWhatsApp")}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+            <MessageCircle size={17} className="relative text-[#25D366]" />
+            <span className="relative">{t("hero.reserveOnWhatsApp")}</span>
           </motion.a>
           <motion.a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 hover:bg-white/5 transition-colors"
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            className="group relative inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink shadow-[0_8px_24px_-4px_rgba(0,0,0,0.35)] ring-1 ring-white/40 hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] hover:ring-ink/30 transition-shadow duration-300 overflow-hidden"
           >
-            <Phone size={16} />
-            {t("hero.callUs")}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+            <Phone size={16} className="relative" />
+            <span className="relative">{t("hero.callUs")}</span>
           </motion.a>
         </motion.div>
 
