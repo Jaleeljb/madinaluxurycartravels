@@ -90,7 +90,7 @@ export default function CarForm({
         <input required value={form.name} onChange={(e) => update("name", e.target.value)} className="input" placeholder="Toyota Camry" />
       </Field>
       <Field label="Category">
-        <input required value={form.category} onChange={(e) => update("category", e.target.value)} className="input" placeholder="Executive Sedan" />
+        <input required value={form.category} onChange={(e) => update("category", e.target.value)} className="input" placeholder="4 Seater" />
       </Field>
       <Field label="Seats">
         <input required type="number" min={1} value={form.seats} onChange={(e) => update("seats", Number(e.target.value))} className="input" />

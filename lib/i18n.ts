@@ -10,7 +10,7 @@ export const DEFAULT_LANGUAGE: Language = "en";
 
 const translations = {
   en: {
-    "nav.fleet": "Fleet",
+    "nav.fleet": "Cars",
     "nav.howItWorks": "How it works",
     "nav.about": "About",
     "nav.contact": "Contact",
@@ -23,9 +23,9 @@ const translations = {
     "hero.quote": "We show up. Every time.",
     "hero.reserveOnWhatsApp": "Reserve on WhatsApp",
     "hero.callUs": "Call us",
-    "hero.scrollToFleet": "Scroll to fleet",
+    "hero.scrollToFleet": "Scroll to cars",
 
-    "fleet.eyebrow": "The fleet",
+    "fleet.eyebrow": "The cars",
     "fleet.headingPrefix": "Vehicles for every party",
     "fleet.headingEmphasis": "size",
     "fleet.description":
@@ -53,7 +53,7 @@ const translations = {
     "how.eyebrow": "Process",
     "how.heading": "Three steps, no counters, no queues.",
     "how.step1Title": "Choose your car",
-    "how.step1Body": "Browse the fleet and pick the vehicle that fits your group, luggage and route.",
+    "how.step1Body": "Browse the cars and pick the vehicle that fits your group, luggage and route.",
     "how.step2Title": "Confirm on WhatsApp",
     "how.step2Body": "Tap Book — your car, dates and route are pre-filled in a WhatsApp message to our team.",
     "how.step3Title": "We arrive on time",
@@ -96,9 +96,9 @@ const translations = {
     "hero.quote": "हम हर बार, समय पर पहुँचते हैं।",
     "hero.reserveOnWhatsApp": "व्हाट्सएप पर बुक करें",
     "hero.callUs": "कॉल करें",
-    "hero.scrollToFleet": "फ्लीट तक स्क्रॉल करें",
+    "hero.scrollToFleet": "गाड़ियों तक स्क्रॉल करें",
 
-    "fleet.eyebrow": "फ्लीट",
+    "fleet.eyebrow": "हमारी गाड़ियाँ",
     "fleet.headingPrefix": "हर ग्रुप के लिए सही",
     "fleet.headingEmphasis": "वाहन",
     "fleet.description":
@@ -126,7 +126,7 @@ const translations = {
     "how.eyebrow": "प्रक्रिया",
     "how.heading": "तीन आसान चरण, न कोई काउंटर, न कोई लाइन।",
     "how.step1Title": "अपनी गाड़ी चुनें",
-    "how.step1Body": "फ्लीट देखें और अपने ग्रुप, सामान और रूट के हिसाब से सही गाड़ी चुनें।",
+    "how.step1Body": "गाड़ियाँ देखें और अपने ग्रुप, सामान और रूट के हिसाब से सही गाड़ी चुनें।",
     "how.step2Title": "व्हाट्सएप पर पुष्टि करें",
     "how.step2Body":
       "'बुक करें' पर टैप करें — आपकी गाड़ी, तारीखें और रूट पहले से भरे हुए व्हाट्सएप मैसेज में हमारी टीम को भेजे जाते हैं।",
@@ -170,9 +170,9 @@ const translations = {
     "hero.quote": "మేము ప్రతిసారీ, సమయానికి వస్తాము.",
     "hero.reserveOnWhatsApp": "వాట్సాప్‌లో బుక్ చేయండి",
     "hero.callUs": "కాల్ చేయండి",
-    "hero.scrollToFleet": "ఫ్లీట్‌కు స్క్రోల్ చేయండి",
+    "hero.scrollToFleet": "వాహనాలకు స్క్రోల్ చేయండి",
 
-    "fleet.eyebrow": "ఫ్లీట్",
+    "fleet.eyebrow": "మా వాహనాలు",
     "fleet.headingPrefix": "ప్రతి గ్రూప్‌కు సరైన",
     "fleet.headingEmphasis": "వాహనం",
     "fleet.description":
@@ -200,7 +200,7 @@ const translations = {
     "how.eyebrow": "ప్రక్రియ",
     "how.heading": "మూడు సులభమైన దశలు, కౌంటర్లు లేవు, క్యూలు లేవు.",
     "how.step1Title": "మీ కారును ఎంచుకోండి",
-    "how.step1Body": "ఫ్లీట్‌ను చూసి మీ గ్రూప్, లగేజీ మరియు మార్గానికి సరిపోయే వాహనాన్ని ఎంచుకోండి.",
+    "how.step1Body": "వాహనాలను చూసి మీ గ్రూప్, లగేజీ మరియు మార్గానికి సరిపోయే వాహనాన్ని ఎంచుకోండి.",
     "how.step2Title": "వాట్సాప్‌లో నిర్ధారించండి",
     "how.step2Body":
       "'బుక్ చేయండి' నొక్కండి — మీ కారు, తేదీలు మరియు మార్గం ముందుగా నింపిన వాట్సాప్ మెసేజ్‌లో మా టీమ్‌కు వెళ్తాయి.",

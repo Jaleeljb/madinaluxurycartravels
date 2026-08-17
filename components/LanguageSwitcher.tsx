@@ -30,8 +30,16 @@ export default function LanguageSwitcher({
             : "inline-flex items-center gap-1.5 text-sm text-ivory/75 hover:text-gold-light transition-colors px-3 py-2 rounded-full hover:bg-charcoal"
         }
       >
-        <Globe size={compact ? 19 : 15} className="shrink-0" />
-        {!compact && <span className="whitespace-nowrap">{current.label}</span>}
+        {compact ? (
+          <span className="text-[13px] font-bold tracking-tight leading-none">
+            {current.code.toUpperCase()}
+          </span>
+        ) : (
+          <>
+            <Globe size={15} className="shrink-0" />
+            <span className="whitespace-nowrap">{current.label}</span>
+          </>
+        )}
       </button>
 
       <AnimatePresence>

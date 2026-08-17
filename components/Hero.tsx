@@ -8,10 +8,10 @@ import { useLanguage } from "./LanguageProvider";
 
 const WHATSAPP_NUMBER = "919876543210";
 
-// A cinematic open-road shot at sunset — reads instantly as "travel" and
-// pairs cleanly with the site's black/white theme via the dark overlay.
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1683220042545-ef1348b2cfb6?q=80&w=2400&auto=format&fit=crop";
+// A red sedan, roof-loaded and mid-drive along a countryside road — reads
+// instantly as "travel" and pairs cleanly with the site's black/white
+// theme via the dark overlay.
+const HERO_IMAGE = "/hero-car.jpg";
 
 // useLayoutEffect warns on the server — fall back to useEffect there.
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;

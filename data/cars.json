@@ -2,7 +2,7 @@
   {
     "id": "c007",
     "name": "Maruti Suzuki Dzire",
-    "category": "Economy Sedan",
+    "category": "4 Seater",
     "seats": 4,
     "bags": 2,
     "pricePerDay": 2200,
@@ -17,7 +17,7 @@
   {
     "id": "c001",
     "name": "Toyota Camry",
-    "category": "Executive Sedan",
+    "category": "4 Seater",
     "seats": 4,
     "bags": 3,
     "pricePerDay": 4500,
@@ -32,7 +32,7 @@
   {
     "id": "c002",
     "name": "GMC Yukon",
-    "category": "Luxury SUV",
+    "category": "7 Seater",
     "seats": 7,
     "bags": 6,
     "pricePerDay": 9800,
@@ -47,7 +47,7 @@
   {
     "id": "c003",
     "name": "Mercedes-Benz S-Class",
-    "category": "Premium Chauffeur",
+    "category": "4 Seater",
     "seats": 3,
     "bags": 2,
     "pricePerDay": 19500,
@@ -62,7 +62,7 @@
   {
     "id": "c004",
     "name": "Toyota Hiace",
-    "category": "Group Van",
+    "category": "7 Seater",
     "seats": 11,
     "bags": 10,
     "pricePerDay": 7800,
@@ -77,7 +77,7 @@
   {
     "id": "c005",
     "name": "Lexus ES",
-    "category": "Executive Sedan",
+    "category": "4 Seater",
     "seats": 4,
     "bags": 3,
     "pricePerDay": 6200,
@@ -92,7 +92,7 @@
   {
     "id": "c006",
     "name": "Nissan Patrol",
-    "category": "Luxury SUV",
+    "category": "7 Seater",
     "seats": 6,
     "bags": 5,
     "pricePerDay": 8600,
