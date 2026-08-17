@@ -2,16 +2,24 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, Phone } from "lucide-react";
+import { ArrowDown, MapPin, Phone } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n";
 
 const WHATSAPP_NUMBER = "916301353952";
 
-// A red sedan, roof-loaded and mid-drive along a countryside road — reads
-// instantly as "travel" and pairs cleanly with the site's black/white
-// theme via the dark overlay.
-const HERO_IMAGE = "/hero-car.jpg";
+// A warm, cinematic open-road shot at sunset — reads instantly as
+// "travel" and gives the dark overlay something rich to work with,
+// rather than the flat, low-light photo this replaces.
+const HERO_IMAGE = "https://images.unsplash.com/photo-1683220042545-ef1348b2cfb6?q=80&w=2400&auto=format&fit=crop";
+
+const STATS: { value: string; labelKey: TranslationKey }[] = [
+  { value: "10+", labelKey: "about.stat1Label" },
+  { value: "25K+", labelKey: "about.stat2Label" },
+  { value: "24/7", labelKey: "about.stat3Label" },
+  { value: "4.9★", labelKey: "about.stat4Label" },
+];
 
 // useLayoutEffect warns on the server — fall back to useEffect there.
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -137,7 +145,11 @@ export default function Hero() {
         <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" aria-hidden="true" />
       </motion.div>
 
-      <div className="absolute inset-0 bg-black/55" />
+      {/* A vignette rather than a flat wash — darkest where the badge and
+          buttons sit, lighter through the middle so the photo still reads
+          as a photo, not just a dimmer switch. */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/72 via-black/38 to-black/72" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
       {/* Centered copy */}
       <div className="relative mx-auto max-w-5xl w-full min-w-0 px-6 sm:px-8 text-center">
@@ -145,8 +157,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-semibold text-sm lg:text-base tracking-[0.3em] uppercase text-white/70"
+          className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-4 py-1.5 font-semibold text-xs lg:text-sm tracking-[0.25em] uppercase text-white/90"
         >
+          <MapPin size={12} className="shrink-0 text-white/70" />
           Madina Travels · Narasaraopet
         </motion.p>
 
@@ -160,21 +173,44 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.36 }}
           className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          <a
+          <motion.a
             href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink hover:bg-white/90 transition-colors"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink shadow-lg shadow-black/20 hover:bg-white/90 transition-colors"
           >
             {t("hero.reserveOnWhatsApp")}
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 transition-colors"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 hover:bg-white/5 transition-colors"
           >
             <Phone size={16} />
             {t("hero.callUs")}
-          </a>
+          </motion.a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4"
+        >
+          {STATS.map((s, i) => (
+            <div key={s.labelKey} className="flex items-center gap-8">
+              <div className="text-center">
+                <p className="font-display text-xl sm:text-2xl font-bold text-white leading-none">{s.value}</p>
+                <p className="text-[10px] sm:text-[11px] text-white/55 uppercase tracking-wider mt-1.5 whitespace-nowrap">
+                  {t(s.labelKey)}
+                </p>
+              </div>
+              {i < STATS.length - 1 && <span className="hidden sm:block w-px h-8 bg-white/20" aria-hidden="true" />}
+            </div>
+          ))}
         </motion.div>
       </div>
 
