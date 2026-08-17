@@ -78,7 +78,7 @@ const translations = {
     "footer.admin": "Admin",
     "footer.contact": "Contact",
     "footer.rightsReserved": "All rights reserved.",
-    "footer.tagline2": "Built for travellers, driven by locals.",
+    "footer.tagline2": "Designed and developed by Shaik Jaleel Basha.",
 
     "whatsapp.chatAria": "Chat with us on WhatsApp",
   },
@@ -152,7 +152,7 @@ const translations = {
     "footer.admin": "एडमिन",
     "footer.contact": "संपर्क",
     "footer.rightsReserved": "सर्वाधिकार सुरक्षित।",
-    "footer.tagline2": "यात्रियों के लिए बनाया, स्थानीय लोगों द्वारा चलाया।",
+    "footer.tagline2": "इसे Shaik Jaleel Basha द्वारा डिज़ाइन और विकसित किया गया है।",
 
     "whatsapp.chatAria": "व्हाट्सएप पर हमसे चैट करें",
   },
@@ -226,7 +226,7 @@ const translations = {
     "footer.admin": "అడ్మిన్",
     "footer.contact": "సంప్రదింపు",
     "footer.rightsReserved": "అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
-    "footer.tagline2": "ప్రయాణికుల కోసం రూపొందించబడింది, స్థానికులచే నడపబడుతుంది.",
+    "footer.tagline2": "దీన్ని Shaik Jaleel Basha రూపొందించారు మరియు అభివృద్ధి చేశారు.",
 
     "whatsapp.chatAria": "వాట్సాప్‌లో మాతో చాట్ చేయండి",
   },

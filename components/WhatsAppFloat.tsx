@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "916301353952";
 
 export default function WhatsAppFloat() {
   const { t } = useLanguage();

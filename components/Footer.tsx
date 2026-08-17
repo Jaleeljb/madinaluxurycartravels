@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import AmbientBackground from "./AmbientBackground";
 import { useLanguage } from "./LanguageProvider";
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "916301353952";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -52,12 +52,12 @@ export default function Footer() {
               <li>
                 <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
                   <Phone size={14} className="text-white/50" />
-                  +91 98765 43210
+                  +91 63013 53952
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <MapPin size={14} className="text-white/50" />
-                Narasaraopet, Andhra Pradesh 552601, India
+              <li className="flex items-start gap-2.5">
+                <MapPin size={14} className="text-white/50 mt-0.5 shrink-0" />
+                <span>Shadi Khana Grounds, Narasaraopet, Palnadu District, Andhra Pradesh - 522601</span>
               </li>
             </ul>
           </div>

@@ -105,7 +105,7 @@ export default function CarForm({
         <input required value={form.currency} onChange={(e) => update("currency", e.target.value)} className="input" placeholder="₹" />
       </Field>
       <Field label="WhatsApp number (with country code)" full>
-        <input required value={form.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} className="input" placeholder="919876543210" />
+        <input required value={form.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} className="input" placeholder="916301353952" />
       </Field>
       <Field label="Description" full>
         <textarea

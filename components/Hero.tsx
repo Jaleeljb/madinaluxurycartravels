@@ -6,7 +6,7 @@ import { ArrowDown, Phone } from "lucide-react";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "916301353952";
 
 // A red sedan, roof-loaded and mid-drive along a countryside road — reads
 // instantly as "travel" and pairs cleanly with the site's black/white

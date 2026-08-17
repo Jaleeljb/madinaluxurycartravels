@@ -9,9 +9,21 @@ import { useLanguage } from "./LanguageProvider";
 
 const ALL_CATEGORIES = "__all__";
 
+// A fixed, deliberately ordered set of categories — shown as filter
+// pills even before a car exists in that bucket yet (the empty state
+// below handles that gracefully). Any custom category typed into the
+// admin form that isn't in this list is appended automatically, so
+// nothing entered there ever gets hidden.
+const FLEET_CATEGORIES = ["4 Seater", "7 Seater", "12 Seater", "24 Seater", "Luxury Cars"];
+
 export default function FleetSection({ cars }: { cars: Car[] }) {
   const { t } = useLanguage();
-  const categories = useMemo(() => [ALL_CATEGORIES, ...Array.from(new Set(cars.map((c) => c.category)))], [cars]);
+  const categories = useMemo(() => {
+    const extra = Array.from(new Set(cars.map((c) => c.category))).filter(
+      (c) => !FLEET_CATEGORIES.includes(c)
+    );
+    return [ALL_CATEGORIES, ...FLEET_CATEGORIES, ...extra];
+  }, [cars]);
   const [active, setActive] = useState<string>(ALL_CATEGORIES);
 
   const filtered = active === ALL_CATEGORIES ? cars : cars.filter((c) => c.category === active);

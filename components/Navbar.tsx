@@ -9,7 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "./LanguageProvider";
 import { waLink, generalEnquiryMessage } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "916301353952";
 
 export default function Navbar() {
   const { t } = useLanguage();
