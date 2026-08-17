@@ -94,7 +94,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-ivory/85 hover:text-ink transition-colors py-2.5 border-b border-card-border last:border-0"
+                  className="text-base font-medium text-ivory/85 hover:text-ink transition-colors py-2.5 border-b border-card-border last:border-0"
                 >
                   {l.label}
                 </a>
@@ -104,7 +104,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="mt-4 inline-flex items-center justify-center text-center text-sm font-semibold px-5 py-3 rounded-full bg-gold text-white"
+                className="mt-4 inline-flex items-center justify-center text-center text-base font-semibold px-5 py-3 rounded-full bg-gold text-white"
               >
                 {t("nav.reserveNow")}
               </a>

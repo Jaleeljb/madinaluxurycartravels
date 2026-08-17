@@ -41,7 +41,7 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="font-mono text-xs md:text-sm lg:text-base tracking-[0.25em] text-white/50 uppercase mb-3"
+          className="font-mono text-sm lg:text-base tracking-[0.25em] text-white/50 uppercase mb-3"
         >
           {t("how.eyebrow")}
         </motion.p>
@@ -103,15 +103,15 @@ export default function HowItWorks() {
                       <step.icon size={20} strokeWidth={1.75} />
                     </motion.span>
                   </span>
-                  <span className="font-mono text-xs text-white/35 tracking-widest">
+                  <span className="font-mono text-sm lg:text-xs text-white/35 tracking-widest">
                     0{i + 1}
                   </span>
                 </div>
 
-                <h3 className="relative font-display text-lg lg:text-xl font-semibold mb-2 text-white">
+                <h3 className="relative font-display text-xl font-semibold mb-2 text-white">
                   {t(step.titleKey)}
                 </h3>
-                <p className="relative text-sm lg:text-base text-white/55 leading-relaxed">{t(step.bodyKey)}</p>
+                <p className="relative text-base text-white/55 leading-relaxed">{t(step.bodyKey)}</p>
               </motion.div>
             ))}
           </div>

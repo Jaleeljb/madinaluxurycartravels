@@ -61,10 +61,10 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
-        <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
+        <span className="absolute top-3 left-3 text-xs lg:text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
           {car.category}
         </span>
-        <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 text-xs lg:text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
           <span className="relative flex w-2 h-2">
             <span
               className={`absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping ${
@@ -83,12 +83,12 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-lg lg:text-xl font-semibold leading-tight">{car.name}</h3>
+          <h3 className="font-display text-xl font-semibold leading-tight">{car.name}</h3>
         </div>
 
-        <p className="mt-2 text-sm lg:text-base text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
+        <p className="mt-2 text-base text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
 
-        <div className="mt-4 flex items-center gap-4 text-xs text-muted font-mono">
+        <div className="mt-4 flex items-center gap-4 text-sm lg:text-xs text-muted font-mono">
           <span className="flex items-center gap-1.5">
             <Users size={13} /> {car.seats} {t("car.seats")}
           </span>
@@ -100,7 +100,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
         <button
           type="button"
           onClick={() => setCalendarOpen(true)}
-          className="mt-4 w-full flex items-center justify-between gap-2 rounded-xl border border-card-border px-3.5 py-2.5 text-sm text-ivory/70 hover:border-gold/50 hover:text-gold-light transition-colors"
+          className="mt-4 w-full flex items-center justify-between gap-2 rounded-xl border border-card-border px-3.5 py-2.5 text-base lg:text-sm text-ivory/70 hover:border-gold/50 hover:text-gold-light transition-colors"
         >
           <span className="flex items-center gap-2 truncate">
             <CalendarDays size={15} className="shrink-0" />
@@ -108,7 +108,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
               {dateRange ? formatRange(dateRange, LOCALE_BY_LANGUAGE[language]) : t("calendar.selectDates")}
             </span>
           </span>
-          {dateRange && <span className="text-xs text-gold-light shrink-0">{t("calendar.change")}</span>}
+          {dateRange && <span className="text-sm lg:text-xs text-gold-light shrink-0">{t("calendar.change")}</span>}
         </button>
       </div>
 
@@ -125,8 +125,8 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="flex items-center justify-between px-5 py-4">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">{t("car.perDay")}</p>
-          <p className="font-display text-xl lg:text-2xl font-bold text-gold-light">
+          <p className="font-mono text-xs lg:text-[10px] uppercase tracking-widest text-muted">{t("car.perDay")}</p>
+          <p className="font-display text-2xl font-bold text-gold-light">
             {car.currency}{car.pricePerDay.toLocaleString("en-IN")}
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           href={waLink(car.whatsapp, bookingMessage(car, dateRange))}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-sm lg:text-base font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"
+          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-base font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"
         >
           <MessageCircle size={16} />
           {t("car.book")}

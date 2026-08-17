@@ -17,7 +17,7 @@ const HERO_IMAGE =
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const HEADLINE_MAX_PX = 46;
-const HEADLINE_MIN_PX = 13;
+const HEADLINE_MIN_PX = 17;
 // A small safety margin so integer scrollWidth rounding never lets the
 // text edge past the container on any script or device.
 const HEADLINE_FIT_SAFETY = 0.96;
@@ -111,7 +111,7 @@ function Tagline({ text }: { text: string }) {
         initial={{ x: -40, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="tagline-shimmer inline-block font-display text-sm sm:text-base lg:text-lg xl:text-xl font-medium whitespace-nowrap"
+        className="tagline-shimmer inline-block font-display text-base lg:text-lg xl:text-xl font-medium whitespace-nowrap"
       >
         {text}
       </motion.p>
@@ -145,7 +145,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-semibold text-xs md:text-sm lg:text-base tracking-[0.3em] uppercase text-white/70"
+          className="font-semibold text-sm lg:text-base tracking-[0.3em] uppercase text-white/70"
         >
           Madina Travels · Narasaraopet
         </motion.p>
@@ -164,13 +164,13 @@ export default function Hero() {
             href={waLink(WHATSAPP_NUMBER, generalEnquiryMessage())}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm lg:text-base font-semibold px-6 py-3 rounded-full bg-white text-ink hover:bg-white/90 transition-colors"
+            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full bg-white text-ink hover:bg-white/90 transition-colors"
           >
             {t("hero.reserveOnWhatsApp")}
           </a>
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="inline-flex items-center gap-2 text-sm lg:text-base font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 transition-colors"
+            className="inline-flex items-center gap-2 text-base font-semibold px-6 py-3 rounded-full border border-white/35 text-white hover:border-white/70 transition-colors"
           >
             <Phone size={16} />
             {t("hero.callUs")}
