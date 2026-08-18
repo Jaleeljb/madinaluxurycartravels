@@ -80,6 +80,8 @@ const translations = {
     "footer.contact": "Contact",
     "footer.rightsReserved": "All rights reserved.",
     "footer.tagline2": "Designed and developed by Shaik Jaleel Basha.",
+    "footer.privacyPolicy": "Privacy Policy",
+    "footer.copyrightNotice": "Copyright & Content Protection",
 
     "whatsapp.chatAria": "Chat with us on WhatsApp",
   },
@@ -155,6 +157,8 @@ const translations = {
     "footer.contact": "संपर्क",
     "footer.rightsReserved": "सर्वाधिकार सुरक्षित।",
     "footer.tagline2": "इसे Shaik Jaleel Basha द्वारा डिज़ाइन और विकसित किया गया है।",
+    "footer.privacyPolicy": "गोपनीयता नीति",
+    "footer.copyrightNotice": "कॉपीराइट और सामग्री सुरक्षा",
 
     "whatsapp.chatAria": "व्हाट्सएप पर हमसे चैट करें",
   },
@@ -230,6 +234,8 @@ const translations = {
     "footer.contact": "సంప్రదింపు",
     "footer.rightsReserved": "అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
     "footer.tagline2": "దీన్ని Shaik Jaleel Basha రూపొందించారు మరియు అభివృద్ధి చేశారు.",
+    "footer.privacyPolicy": "గోప్యతా విధానం",
+    "footer.copyrightNotice": "కాపీరైట్ & కంటెంట్ రక్షణ",
 
     "whatsapp.chatAria": "వాట్సాప్‌లో మాతో చాట్ చేయండి",
   },
