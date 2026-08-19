@@ -27,15 +27,15 @@ export default function CopyrightPage() {
           the <strong>Copyright Act, 1957</strong> and other applicable Indian intellectual-property law:
         </p>
         <ul>
-          <li>The written copy headings, vehicle descriptions, service descriptions and other original text</li>
-          <li>The Madina Car Travels name, logo artwork and wordmark (see Section 4)</li>
-          <li>The layout, visual design and interaction design of the website</li>
-          <li>Vehicle photographs uploaded directly by Madina Car Travels through its own admin area (as distinct from stock photographs see Section 2)</li>
+          <li>The written copy — headings, vehicle descriptions, service descriptions and other original text;</li>
+          <li>The Madina Car Travels name, logo artwork and wordmark (see Section 4);</li>
+          <li>The layout, visual design and interaction design of the website;</li>
+          <li>Vehicle photographs uploaded directly by Madina Car Travels through its own admin area (as distinct from stock photographs — see Section 2); and</li>
           <li>The underlying website source code, to the extent owned or licensed by Madina Car Travels (see Section 5).</li>
         </ul>
         <p>
           This notice does not, by itself, claim ownership of any third-party material that appears on
-          the site see the next section for exactly what that is and how it is used.
+          the site — see the next section for exactly what that is and how it is used.
         </p>
       </PolicySection>
 
@@ -57,14 +57,14 @@ export default function CopyrightPage() {
               <tr>
                 <td className="px-4 py-3">Vehicle &amp; hero photographs (stock)</td>
                 <td className="px-4 py-3">Unsplash (images.unsplash.com)</td>
-                <td className="px-4 py-3">Unsplash License free to use attribution appreciated but not legally required.</td>
+                <td className="px-4 py-3">Unsplash License — free to use; attribution appreciated but not legally required.</td>
               </tr>
               <tr>
                 <td className="px-4 py-3">Vehicle photographs (owner-uploaded)</td>
                 <td className="px-4 py-3">Uploaded by Madina Car Travels via the admin area</td>
                 <td className="px-4 py-3">
-                  Owned or licensed by Madina Car Travels <em>to be confirmed by the business owner for
-                    each photograph actually in use.</em>
+                  Owned or licensed by Madina Car Travels — <em>to be confirmed by the business owner for
+                  each photograph actually in use.</em>
                 </td>
               </tr>
               <tr>
@@ -112,17 +112,17 @@ export default function CopyrightPage() {
           and unless you have our prior written permission, please do not:
         </p>
         <ul>
-          <li>Copy, reproduce or republish substantial parts of this website&rsquo;s text, photographs or design elsewhere</li>
-          <li>Scrape or systematically extract website content for commercial reuse</li>
-          <li>Mirror this website or redistribute it as your own</li>
-          <li>Modify and republish our content in a way that could mislead readers about its origin</li>
-          <li>Sell or sublicense our content to others</li>
-          <li>Copy our branding, logo, or overall look-and-feel for another business</li>
+          <li>Copy, reproduce or republish substantial parts of this website&rsquo;s text, photographs or design elsewhere;</li>
+          <li>Scrape or systematically extract website content for commercial reuse;</li>
+          <li>Mirror this website or redistribute it as your own;</li>
+          <li>Modify and republish our content in a way that could mislead readers about its origin;</li>
+          <li>Sell or sublicense our content to others;</li>
+          <li>Copy our branding, logo, or overall look-and-feel for another business; or</li>
           <li>Use our content, name or branding to create a page, listing or profile that could be mistaken for an official Madina Car Travels page.</li>
         </ul>
         <p>
           This is not an absolute prohibition on every possible use. Indian copyright law recognises
-          certain permitted uses and fair-dealing exceptions for example, for private study, criticism
+          certain permitted uses and fair-dealing exceptions — for example, for private study, criticism
           or review, reporting of current events, and certain educational purposes under Section 52 of
           the Copyright Act, 1957. Nothing in this notice is intended to override those statutory
           exceptions where they genuinely apply.
@@ -135,10 +135,10 @@ export default function CopyrightPage() {
           car silhouette) identify our business. Please do not:
         </p>
         <ul>
-          <li>Reproduce our logo without permission</li>
-          <li>Alter our logo in a way that misrepresents it</li>
-          <li>Use our name or logo in a way that implies affiliation, partnership or endorsement that does not exist</li>
-          <li>Use our name or logo to promote a competing car rental or travel service</li>
+          <li>Reproduce our logo without permission;</li>
+          <li>Alter our logo in a way that misrepresents it;</li>
+          <li>Use our name or logo in a way that implies affiliation, partnership or endorsement that does not exist;</li>
+          <li>Use our name or logo to promote a competing car rental or travel service; or</li>
           <li>Create social-media profiles, listings or websites using our name or logo to impersonate our business.</li>
         </ul>
         <p>
@@ -154,19 +154,19 @@ export default function CopyrightPage() {
         <p>
           This website was designed and developed by <strong>Shaik Jaleel Basha</strong>. Building this
           website does not, by itself, mean every item of source code, design asset, photograph, logo
-          file or other material used on it is automatically owned by Madina Car Travels ownership
+          file or other material used on it is automatically owned by Madina Car Travels — ownership
           depends on the actual agreement (if any) between the business and the developer, and on the
           licence terms of any third-party assets used (see Section 2).
         </p>
         <p>The items below should be documented and confirmed between the business owner and the developer before this website is treated as fully cleared for commercial use:</p>
         <ul>
-          <li>Copyright ownership of the custom website source code</li>
-          <li>Any assignment or licence agreement covering that code, from developer to business owner</li>
-          <li>Licence confirmation for any third-party stock images actually kept on the live site</li>
-          <li>Ownership/licence confirmation for the logo artwork</li>
-          <li>Confirmation of the Inter typeface&rsquo;s open-source licence terms (already satisfied see Section 2)</li>
-          <li>Confirmation of open-source licence terms for all software dependencies (already satisfied for the libraries currently in use see Section 2)</li>
-          <li>Ownership/access of the hosting account (Vercel) and database account (Upstash)</li>
+          <li>Copyright ownership of the custom website source code;</li>
+          <li>Any assignment or licence agreement covering that code, from developer to business owner;</li>
+          <li>Licence confirmation for any third-party stock images actually kept on the live site;</li>
+          <li>Ownership/licence confirmation for the logo artwork;</li>
+          <li>Confirmation of the Inter typeface&rsquo;s open-source licence terms (already satisfied — see Section 2);</li>
+          <li>Confirmation of open-source licence terms for all software dependencies (already satisfied for the libraries currently in use — see Section 2);</li>
+          <li>Ownership/access of the hosting account (Vercel) and database account (Upstash); and</li>
           <li>Ownership/access of the domain, once a custom domain (rather than a vercel.app subdomain) is set up.</li>
         </ul>
       </PolicySection>
@@ -174,22 +174,22 @@ export default function CopyrightPage() {
       <PolicySection id="enforcement" number="6" title="Enforcement and remedies">
         <p>
           Unauthorised use of Madina Car Travels&rsquo; original content, branding or logo, in a manner that
-          infringes applicable copyright or other intellectual property rights, may entitle Madina Car
-          Travels to pursue remedies available under Indian law, which depending on the facts can
+          infringes applicable copyright or other intellectual-property rights, may entitle Madina Car
+          Travels to pursue remedies available under Indian law, which — depending on the facts — can
           include:
         </p>
         <ul>
-          <li>Requesting takedown or removal of the infringing material</li>
-          <li>Seeking an injunction to stop continued use</li>
-          <li>Claiming damages or an account of the infringer&rsquo;s profits</li>
-          <li>Seeking delivery-up or recovery of infringing copies, where applicable under the Copyright Act, 1957</li>
+          <li>Requesting takedown or removal of the infringing material;</li>
+          <li>Seeking an injunction to stop continued use;</li>
+          <li>Claiming damages or an account of the infringer&rsquo;s profits;</li>
+          <li>Seeking delivery-up or recovery of infringing copies, where applicable under the Copyright Act, 1957; and</li>
           <li>Criminal proceedings under Section 63 of the Copyright Act, 1957, in cases of knowing infringement or abetment of infringement, subject to that Act&rsquo;s requirements and a court&rsquo;s determination of the facts.</li>
         </ul>
         <p>
           Not every disputed or accidental use of our content amounts to actionable infringement, and
           the availability of any specific remedy depends on the circumstances, the applicable statutory
           provisions, and determination by a competent court or authority. This section describes
-          potentially available remedies it is not a guarantee that any particular remedy or penalty
+          potentially available remedies; it is not a guarantee that any particular remedy or penalty
           will apply to any specific case.
         </p>
       </PolicySection>

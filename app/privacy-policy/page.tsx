@@ -24,11 +24,11 @@ export default function PrivacyPolicyPage() {
         <p>
           This Privacy Policy applies to the website operated by <strong>Madina Car Travels</strong>, a
           car rental and travel service based at Shadi Khana Grounds, Narasaraopet, Palnadu District,
-          Andhra Pradesh – 522601, India We us(&ldquo;<strong>Madina Car Travels</strong>&rdquo;), and
-          available at <strong>madinacartravels.vercel.app</strong> the Website.
+          Andhra Pradesh – 522601, India (&ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>Madina Car Travels</strong>&rdquo;), and
+          available at <strong>madinacartravels.vercel.app</strong> (the &ldquo;<strong>Website</strong>&rdquo;).
         </p>
         <p>
-          This Policy covers the Website itself the pages a visitor loads in their browser and the
+          This Policy covers the Website itself — the pages a visitor loads in their browser — and the
           information exchanged when a visitor uses the WhatsApp or phone links on the Website to contact
           us. It does not cover WhatsApp&rsquo;s own app or platform, which is operated by Meta and governed
           by Meta&rsquo;s own privacy terms (see Section 7).
@@ -53,8 +53,8 @@ export default function PrivacyPolicyPage() {
           The DPDP Rules were notified on 13 November 2025, alongside a notification bringing certain
           provisions of the DPDP Act into force (including the Act&rsquo;s definitions and the provisions
           establishing the Data Protection Board of India). However, most of the Act&rsquo;s substantive
-          obligations including the core consent and notice framework, most data principal rights,
-          breach notification duties and provisions specific to significant data fiduciaries come
+          obligations — including the core consent and notice framework, most data-principal rights,
+          breach-notification duties and provisions specific to significant data fiduciaries — come
           into force in phases: provisions relating to consent managers commence on 13 November 2026,
           and the remaining provisions are scheduled to commence on 13 May 2027.
         </p>
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
           (particularly Section 43A) and the SPDI Rules, 2011 remain the operative statutory framework
           governing reasonable security practices for sensitive personal data in India. We describe our
           practices below as current commitments and, where they anticipate the DPDP Act, as voluntary
-          preparation ahead of that Act&rsquo;s full commencement not as claims that every DPDP obligation
+          preparation ahead of that Act&rsquo;s full commencement — not as claims that every DPDP obligation
           is already legally mandatory for us today. We will update this Policy as further provisions
           come into force.
         </p>
@@ -73,13 +73,13 @@ export default function PrivacyPolicyPage() {
       <PolicySection id="information-we-collect" number="3" title="Information we collect">
         <h3>Information you provide to us</h3>
         <p>
-          The Website itself does not contain a contact form, booking form, account sign up, or any
+          The Website itself does not contain a contact form, booking form, account sign-up, or any
           other input field that transmits data to our servers. Every &ldquo;Book&rdquo; or &ldquo;Reserve on
-          WhatsApp&rdquo; action on the Website opens a pre filled WhatsApp conversation in your own
+          WhatsApp&rdquo; action on the Website opens a pre-filled WhatsApp conversation in your own
           WhatsApp app, addressed to our business WhatsApp number. If you choose to send that message,
-          the information it contains which may include your name (as shown in your WhatsApp
+          the information it contains — which may include your name (as shown in your WhatsApp
           profile), phone number, the vehicle you are interested in, and any dates, locations or trip
-          details you type is sent to us <strong>through WhatsApp</strong>, not through this Website&rsquo;s
+          details you type — is sent to us <strong>through WhatsApp</strong>, not through this Website&rsquo;s
           servers. See Section 7 for more on how this works.
         </p>
         <p>
@@ -90,13 +90,13 @@ export default function PrivacyPolicyPage() {
         <p>
           The Website does not run analytics, advertising, or tracking scripts, and does not set
           cookies for ordinary visitors (see Section 14). The one exception is a single authentication
-          cookie used only by the business owner to log in to the password protected fleet-management
+          cookie used only by the business owner to log in to the password-protected fleet-management
           area at <code>/admin</code>; ordinary visitors browsing the public site never receive this
           cookie.
         </p>
         <p>
-          The Website stores one item in your browser&rsquo;s local storage your selected display
-          language (English, Hindi or Telugu) so the site remembers your preference on your next
+          The Website stores one item in your browser&rsquo;s local storage — your selected display
+          language (English, Hindi or Telugu) — so the site remembers your preference on your next
           visit. This value stays on your device; it is not transmitted to us or to any third party.
         </p>
         <p>
@@ -134,15 +134,15 @@ export default function PrivacyPolicyPage() {
 
       <PolicySection id="consent" number="5" title="Consent and lawful basis">
         <p>
-          Because booking enquiries are voluntary you choose to open WhatsApp or dial our number and
-          choose what to send us the information involved is provided with your knowledge and
+          Because booking enquiries are voluntary — you choose to open WhatsApp or dial our number and
+          choose what to send us — the information involved is provided with your knowledge and
           consent at the point you send it. Where the DPDP Act&rsquo;s consent framework is in force and
           applicable, we intend to rely on consent, or another lawful basis recognised by that Act (such
           as processing necessary to respond to a request you have made), as the basis for processing.
         </p>
         <p>
-          You are not obliged to send us any particular piece of information. However, some details
-          such as pickup location, travel dates and a contact number are practically necessary for us
+          You are not obliged to send us any particular piece of information. However, some details —
+          such as pickup location, travel dates and a contact number — are practically necessary for us
           to confirm and fulfil a booking; declining to share them may mean we are unable to process
           your request.
         </p>
@@ -158,16 +158,16 @@ export default function PrivacyPolicyPage() {
         <p>We do not sell personal information. We may share the limited information involved in a booking with:</p>
         <ul>
           <li>
-            <strong>Our drivers/service personnel</strong> - so they know who to collect, from where, and when
+            <strong>Our drivers/service personnel</strong> — so they know who to collect, from where, and when;
           </li>
           <li>
-            <strong>Meta Platforms, Inc. (WhatsApp)</strong> - inherently, whenever a booking or enquiry is conducted over WhatsApp, since that conversation runs on WhatsApp&rsquo;s platform (see Section 7)
+            <strong>Meta Platforms, Inc. (WhatsApp)</strong> — inherently, whenever a booking or enquiry is conducted over WhatsApp, since that conversation runs on WhatsApp&rsquo;s platform (see Section 7);
           </li>
           <li>
-            <strong>Our hosting and infrastructure providers</strong> (currently Vercel for website hosting, and Upstash for the database that stores our vehicle listings) - who process data on our behalf to keep the Website running
+            <strong>Our hosting and infrastructure providers</strong> (currently Vercel for website hosting, and Upstash for the database that stores our vehicle listings) — who process data on our behalf to keep the Website running;
           </li>
           <li>
-            <strong>Government or law enforcement authorities</strong>, only where we are legally required to disclose information to them.
+            <strong>Government or law-enforcement authorities</strong>, only where we are legally required to disclose information to them.
           </li>
         </ul>
         <p>
@@ -178,22 +178,22 @@ export default function PrivacyPolicyPage() {
 
       <PolicySection id="whatsapp" number="7" title="WhatsApp booking privacy">
         <p>
-          Booking and enquiry buttons on this Website (Reserve on WhatsApp, &ldquo;Book&rdquo;, &ldquo;Message us on
+          Booking and enquiry buttons on this Website (&ldquo;Reserve on WhatsApp&rdquo;, &ldquo;Book&rdquo;, &ldquo;Message us on
           WhatsApp&rdquo;) open a pre-addressed conversation in the WhatsApp application, with a suggested
-          message already typed in. Nothing is sent automatically you choose whether to review, edit
+          message already typed in. Nothing is sent automatically — you choose whether to review, edit
           and send that message.
         </p>
         <p>Once you send a message on WhatsApp, please note:</p>
         <ul>
-          <li>The conversation takes place on WhatsApp&rsquo;s own platform, operated by Meta Platforms, Inc.</li>
-          <li>That message, and any information within it, is processed under WhatsApp&rsquo;s own privacy policy and terms of service, not this one</li>
-          <li>Madina Car Travels does not control how WhatsApp itself stores, encrypts, backs up or otherwise processes messages on its platform</li>
+          <li>The conversation takes place on WhatsApp&rsquo;s own platform, operated by Meta Platforms, Inc.;</li>
+          <li>That message, and any information within it, is processed under WhatsApp&rsquo;s own privacy policy and terms of service, not this one;</li>
+          <li>Madina Car Travels does not control how WhatsApp itself stores, encrypts, backs up or otherwise processes messages on its platform;</li>
           <li>
             We recommend reviewing WhatsApp&rsquo;s privacy policy directly at{" "}
             <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
               whatsapp.com/legal/privacy-policy
             </a>{" "}
-            before sending sensitive information
+            before sending sensitive information; and
           </li>
           <li>We suggest sharing only what is needed to arrange your trip (name, contact number, pickup/drop details, dates) and avoiding unnecessary sensitive information (such as ID or financial details) over chat.</li>
         </ul>
@@ -221,9 +221,9 @@ export default function PrivacyPolicyPage() {
       <PolicySection id="security" number="9" title="Data security">
         <p>We use reasonable technical safeguards appropriate to how this Website is actually built, including:</p>
         <ul>
-          <li>HTTPS/TLS encryption for all traffic to and from the Website</li>
-          <li>A password-protected admin area, gated by an authentication cookie that is set to be HTTP-only and (in production) transmitted only over HTTPS</li>
-          <li>No public exposure of the database used to store vehicle listings it is accessed only from server-side code, using credentials that are not shipped to the browser</li>
+          <li>HTTPS/TLS encryption for all traffic to and from the Website;</li>
+          <li>A password-protected admin area, gated by an authentication cookie that is set to be HTTP-only and (in production) transmitted only over HTTPS;</li>
+          <li>No public exposure of the database used to store vehicle listings — it is accessed only from server-side code, using credentials that are not shipped to the browser;</li>
           <li>Keeping the Website&rsquo;s underlying software dependencies reasonably up to date.</li>
         </ul>
         <p>
@@ -241,7 +241,7 @@ export default function PrivacyPolicyPage() {
           provisions are in force and apply to us, we intend to follow the notification procedures and
           timelines they prescribe, including notifying the Data Protection Board of India and affected
           individuals where required. As explained in Section 2, those provisions are not yet fully in
-          force at the time of writing we do not represent a specific notification timeline as a
+          force at the time of writing; we do not represent a specific notification timeline as a
           present legal guarantee, and this section will be updated once those obligations formally
           apply to us.
         </p>
@@ -264,11 +264,11 @@ export default function PrivacyPolicyPage() {
           rights for individuals (&ldquo;Data Principals&rdquo;) regarding their personal data, including rights to:
         </p>
         <ul>
-          <li>Obtain a summary of personal data we hold about you and how it is being processed</li>
-          <li>Request correction or updating of inaccurate or incomplete personal data</li>
-          <li>Request erasure of personal data that is no longer necessary for the purpose it was collected for</li>
-          <li>Withdraw consent, where processing is based on consent</li>
-          <li>Register a grievance regarding how your personal data is handled and</li>
+          <li>Obtain a summary of personal data we hold about you and how it is being processed;</li>
+          <li>Request correction or updating of inaccurate or incomplete personal data;</li>
+          <li>Request erasure of personal data that is no longer necessary for the purpose it was collected for;</li>
+          <li>Withdraw consent, where processing is based on consent;</li>
+          <li>Register a grievance regarding how your personal data is handled; and</li>
           <li>Nominate another individual to exercise these rights on your behalf in the event of death or incapacity, where applicable.</li>
         </ul>
         <p>
@@ -287,14 +287,14 @@ export default function PrivacyPolicyPage() {
           Travels handles information, please contact:
         </p>
         <div className="legal-note space-y-1">
-          <p><strong>Privacy contact name:</strong> SK Mohammad YASEEN</p>
+          <p><strong>Privacy contact name:</strong> [TO BE PROVIDED BY THE BUSINESS OWNER]</p>
           <p><strong>Phone:</strong> +91 63013 53952</p>
-          <p><strong>Email:</strong> vk.venkat952@gmail.com</p>
+          <p><strong>Email:</strong> [TO BE PROVIDED BY THE BUSINESS OWNER]</p>
           <p><strong>Address:</strong> Shadi Khana Grounds, Narasaraopet, Palnadu District, Andhra Pradesh – 522601, India</p>
-          <p><strong>Grievance submission procedure:</strong> e.g. &ldquo;email the address above with the subject line &lsquo;Privacy Request&rsquo;&rdquo;</p>
+          <p><strong>Grievance submission procedure:</strong> [TO BE CONFIGURED — e.g. &ldquo;email the address above with the subject line &lsquo;Privacy Request&rsquo;&rdquo;]</p>
         </div>
         <p>
-          We do not currently publish a dedicated privacy email address on the Website the phone
+          We do not currently publish a dedicated privacy email address on the Website — the phone
           number above is the only contact channel confirmed at the time of writing. We recommend the
           business owner set up and publish an email address for privacy/grievance correspondence, so
           requests can be made in writing.
@@ -305,7 +305,7 @@ export default function PrivacyPolicyPage() {
         <p>This Website uses browser storage in two limited ways:</p>
         <ul>
           <li>
-            <strong>One essential cookie</strong>, used only within the password protected admin area at{" "}
+            <strong>One essential cookie</strong>, used only within the password-protected admin area at{" "}
             <code>/admin</code>, to keep the business owner logged in for up to 8 hours. It is not set
             for ordinary visitors browsing the public pages of the Website, and it is not used for
             tracking, analytics or advertising.
@@ -318,7 +318,7 @@ export default function PrivacyPolicyPage() {
         <p>
           We do not use analytics cookies, advertising/marketing cookies, or third-party tracking
           cookies. Because the Website does not currently set non-essential cookies for visitors, it
-          does not display a cookie-consent banner the admin cookie above is strictly necessary for
+          does not display a cookie-consent banner; the admin cookie above is strictly necessary for
           that feature to function and falls within the &ldquo;essential cookie&rdquo; category that is generally
           exempt from separate consent requirements. If analytics, advertising or other non-essential
           tracking is added to the Website in the future, this section and an appropriate consent
@@ -345,7 +345,7 @@ export default function PrivacyPolicyPage() {
 
       <PolicySection id="data-transfers" number="16" title="Data transfers">
         <p>
-          The Website is hosted on Vercel, and its vehicle-listing database runs on Upstash both are
+          The Website is hosted on Vercel, and its vehicle-listing database runs on Upstash — both are
           cloud infrastructure providers that operate global networks, which can mean data is processed
           on servers outside India depending on the specific region configured for the account. We have
           not independently verified the exact processing region(s) currently configured for these
@@ -361,7 +361,7 @@ export default function PrivacyPolicyPage() {
 
       <PolicySection id="changes" number="17" title="Changes to this policy">
         <p>
-          We may update this Privacy Policy from time to time for example, if we add new features to
+          We may update this Privacy Policy from time to time — for example, if we add new features to
           the Website, change service providers, or as further provisions of the DPDP Act come into
           force. We will revise the &ldquo;Last updated&rdquo; date at the top of this page whenever we do. We
           encourage you to review this page periodically.
@@ -373,7 +373,7 @@ export default function PrivacyPolicyPage() {
           This Privacy Policy is intended to describe, in plain language, how this Website and Madina
           Car Travels handle information. It is not a substitute for advice from a qualified lawyer.
           This Policy is designed to align with applicable Indian privacy requirements, subject to legal
-          review and to the actual, current implementation of the Website described above it is not a
+          review and to the actual, current implementation of the Website described above — it is not a
           claim of full legal compliance, government approval, or certification of any kind.
         </p>
       </PolicySection>
