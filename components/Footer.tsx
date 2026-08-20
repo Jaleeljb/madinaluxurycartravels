@@ -63,8 +63,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm lg:text-xs text-white/40">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm lg:text-xs text-white/40">
           <p>© {new Date().getFullYear()} Madina Car Travels. {t("footer.rightsReserved")}</p>
+          <nav className="flex items-center gap-5" aria-label="Legal">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              {t("footer.privacyPolicy")}
+            </Link>
+            <Link href="/copyright" className="hover:text-white transition-colors">
+              {t("footer.copyrightNotice")}
+            </Link>
+          </nav>
           <p>{t("footer.tagline2")}</p>
         </div>
       </div>

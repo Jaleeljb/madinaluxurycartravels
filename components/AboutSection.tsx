@@ -52,9 +52,11 @@ export default function AboutSection() {
           <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}>
             <div className="relative rounded-[1.75rem] overflow-hidden border border-card-border card-shadow aspect-[4/5]">
               {/*
-                Demo owner photo — replace the file at
-                /public/owner-placeholder.jpg with a real photo (keep the same
-                filename) and it will update here automatically.
+                Founder photo — Yaseen. Cropped to a 4:5 portrait so it
+                fills this card via object-cover without further cropping.
+                To update, replace /public/owner-placeholder.jpg (same
+                filename, ideally already ~4:5) and it updates here
+                automatically.
               */}
               <img
                 src="/owner-placeholder.jpg"
