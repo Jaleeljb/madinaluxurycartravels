@@ -9,10 +9,12 @@ import type { TranslationKey } from "@/lib/i18n";
 
 const WHATSAPP_NUMBER = "916301353952";
 
-// A warm, cinematic open-road shot at sunset — reads instantly as
-// "travel" and gives the dark overlay something rich to work with,
-// rather than the flat, low-light photo this replaces.
-const HERO_IMAGE = "https://images.unsplash.com/photo-1683220042545-ef1348b2cfb6?q=80&w=2400&auto=format&fit=crop";
+// The looping hero background video, plus a poster frame shown instantly
+// on load (and used as the static fallback for prefers-reduced-motion
+// and for browsers/connections that can't play video).
+const HERO_VIDEO_MP4 = "/video/hero-bg.mp4";
+const HERO_VIDEO_WEBM = "/video/hero-bg.webm";
+const HERO_POSTER = "/video/hero-bg-poster.jpg";
 
 const STATS: { value: string; labelKey: TranslationKey }[] = [
   { value: "10+", labelKey: "about.stat1Label" },
@@ -130,19 +132,48 @@ function Tagline({ text }: { text: string }) {
 export default function Hero() {
   const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
+  const [videoReady, setVideoReady] = useState(false);
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ink pt-6 sm:pt-8">
-      {/* Static travel wallpaper — a single slow, graceful settle-zoom on
-          load, then holds still. Scales to fill every screen size via
-          object-cover, no fixed dimensions. */}
+      {/* Background layer: the poster frame paints instantly and always
+          stays underneath, so there is never a blank/black gap while the
+          video buffers (or if it fails to load at all). object-cover
+          keeps everything filling the frame edge-to-edge, cropped
+          sensibly, on any screen size or aspect ratio — phone portrait,
+          tablet, ultrawide desktop, all the same markup. A single slow,
+          graceful settle-zoom plays on load, then holds still. */}
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: prefersReducedMotion ? 1 : 1.1 }}
+        initial={{ scale: prefersReducedMotion ? 1 : 1.08 }}
         animate={{ scale: 1 }}
         transition={{ duration: 14, ease: "easeOut" }}
       >
-        <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" aria-hidden="true" />
+        <img
+          src={HERO_POSTER}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        {!prefersReducedMotion && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={HERO_POSTER}
+            onCanPlay={() => setVideoReady(true)}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: videoReady ? 1 : 0 }}
+            aria-hidden="true"
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noremoteplayback"
+          >
+            <source src={HERO_VIDEO_WEBM} type="video/webm" />
+            <source src={HERO_VIDEO_MP4} type="video/mp4" />
+          </video>
+        )}
       </motion.div>
 
       {/* A vignette rather than a flat wash — darkest where the badge and
