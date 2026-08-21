@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
-import { CalendarDays, MessageCircle, Users, Briefcase } from "lucide-react";
+import { CalendarDays, MessageCircle, Users, Briefcase, MapPin, Flag } from "lucide-react";
 import type { Car } from "@/lib/types";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
 import { useLanguage } from "./LanguageProvider";
@@ -15,6 +15,8 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
   const cardRef = useRef<HTMLElement>(null);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
+  const [pickup, setPickup] = useState("");
+  const [destination, setDestination] = useState("");
 
   const px = useMotionValue(0);
   const py = useMotionValue(0);
@@ -86,11 +88,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           <h3 className="font-display text-xl font-semibold leading-tight line-clamp-1">{car.name}</h3>
         </div>
 
-        <p className="mt-2 min-h-[3.25rem] text-base text-ivory/60 leading-relaxed line-clamp-2">
-          {car.description}
-        </p>
-
-        <div className="mt-4 flex items-center gap-4 text-sm lg:text-xs text-muted font-mono">
+        <div className="mt-3 flex items-center gap-4 text-sm lg:text-xs text-muted font-mono">
           <span className="flex items-center gap-1.5">
             <Users size={13} /> {car.seats} {t("car.seats")}
           </span>
@@ -99,10 +97,43 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           </span>
         </div>
 
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <label className="flex flex-col gap-1">
+            <span className="text-[10px] lg:text-[9px] font-mono uppercase tracking-widest text-muted">
+              {t("trip.from")}
+            </span>
+            <span className="flex items-center gap-1.5 rounded-xl border border-card-border px-3 py-2 focus-within:border-gold/50 transition-colors">
+              <MapPin size={13} className="shrink-0 text-muted" />
+              <input
+                type="text"
+                value={pickup}
+                onChange={(e) => setPickup(e.target.value)}
+                placeholder={t("trip.fromPlaceholder")}
+                className="w-full min-w-0 bg-transparent text-sm lg:text-xs text-ivory/80 outline-none placeholder:text-muted"
+              />
+            </span>
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-[10px] lg:text-[9px] font-mono uppercase tracking-widest text-muted">
+              {t("trip.to")}
+            </span>
+            <span className="flex items-center gap-1.5 rounded-xl border border-card-border px-3 py-2 focus-within:border-gold/50 transition-colors">
+              <Flag size={13} className="shrink-0 text-muted" />
+              <input
+                type="text"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                placeholder={t("trip.toPlaceholder")}
+                className="w-full min-w-0 bg-transparent text-sm lg:text-xs text-ivory/80 outline-none placeholder:text-muted"
+              />
+            </span>
+          </label>
+        </div>
+
         <button
           type="button"
           onClick={() => setCalendarOpen(true)}
-          className="mt-4 w-full flex items-center justify-between gap-2 rounded-xl border border-card-border px-3.5 py-2.5 text-base lg:text-sm text-ivory/70 hover:border-gold/50 hover:text-gold-light transition-colors"
+          className="mt-3 w-full flex items-center justify-between gap-2 rounded-xl border border-card-border px-3.5 py-2.5 text-base lg:text-sm text-ivory/70 hover:border-gold/50 hover:text-gold-light transition-colors"
         >
           <span className="flex items-center gap-2 truncate">
             <CalendarDays size={15} className="shrink-0" />
@@ -133,7 +164,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           </p>
         </div>
         <a
-          href={waLink(car.whatsapp, bookingMessage(car, dateRange))}
+          href={waLink(car.whatsapp, bookingMessage(car, dateRange, { pickup, destination }))}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-ink text-base font-medium px-4 py-2.5 hover:brightness-105 active:scale-[0.97] transition"

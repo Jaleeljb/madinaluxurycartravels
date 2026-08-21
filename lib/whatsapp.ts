@@ -6,7 +6,11 @@ export function waLink(number: string, message: string): string {
   return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
 }
 
-export function bookingMessage(car: Car, dateRange?: DateRange | null): string {
+export function bookingMessage(
+  car: Car,
+  dateRange?: DateRange | null,
+  trip?: { pickup?: string; destination?: string }
+): string {
   let dateLine = `Pickup date: `;
   if (dateRange) {
     if (dateRange.start === dateRange.end) {
@@ -23,8 +27,8 @@ export function bookingMessage(car: Car, dateRange?: DateRange | null): string {
     `Car: ${car.name} (${car.category})`,
     `Rate: ${car.currency}${car.pricePerDay.toLocaleString("en-IN")}/day`,
     dateLine,
-    `Pickup location: `,
-    `Trip: `,
+    `Pickup location: ${trip?.pickup?.trim() || ""}`,
+    `Trip: ${trip?.destination?.trim() ? `To ${trip.destination.trim()}` : ""}`,
     ``,
     `Please confirm availability.`,
   ].join("\n");

@@ -40,6 +40,11 @@ const translations = {
     "car.available": "Available",
     "car.unavailable": "Unavailable",
 
+    "trip.from": "From",
+    "trip.to": "To",
+    "trip.fromPlaceholder": "Pickup point",
+    "trip.toPlaceholder": "Destination",
+
     "calendar.selectDates": "Select dates",
     "calendar.change": "Change",
     "calendar.legendAvailable": "Available",
@@ -115,6 +120,11 @@ const translations = {
     "car.book": "बुक करें",
     "car.available": "उपलब्ध",
     "car.unavailable": "अनुपलब्ध",
+
+    "trip.from": "कहाँ से",
+    "trip.to": "कहाँ तक",
+    "trip.fromPlaceholder": "पिकअप स्थान",
+    "trip.toPlaceholder": "गंतव्य स्थान",
 
     "calendar.selectDates": "तारीखें चुनें",
     "calendar.change": "बदलें",
@@ -192,6 +202,11 @@ const translations = {
     "car.book": "బుక్ చేయండి",
     "car.available": "అందుబాటులో ఉంది",
     "car.unavailable": "అందుబాటులో లేదు",
+
+    "trip.from": "ఎక్కడ నుండి",
+    "trip.to": "ఎక్కడకు",
+    "trip.fromPlaceholder": "పికప్ ప్రదేశం",
+    "trip.toPlaceholder": "గమ్యం",
 
     "calendar.selectDates": "తేదీలను ఎంచుకోండి",
     "calendar.change": "మార్చండి",
