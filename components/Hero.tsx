@@ -188,9 +188,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-4 py-1.5 font-semibold text-xs lg:text-sm tracking-[0.25em] uppercase text-white/90"
+          className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white shadow-sm px-4 py-1.5 font-semibold text-sm lg:text-base tracking-[0.2em] uppercase text-ink"
         >
-          <MapPin size={12} className="shrink-0 text-white/70" />
+          <MapPin size={13} className="shrink-0 text-ink/70" />
           Madina Car Travels · Narasaraopet
         </motion.p>
 

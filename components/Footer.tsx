@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="mb-4">
               <Logo variant="light" size={38} />
             </div>
-            <p className="text-base text-white/55 max-w-sm leading-relaxed mb-6">
+            <p className="text-base lg:text-sm text-white/55 max-w-sm leading-relaxed mb-6">
               {t("footer.tagline")}
             </p>
             <a
@@ -37,8 +37,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.navigate")}</p>
-            <ul className="space-y-3 text-base text-white/70">
+            <p className="text-sm lg:text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.navigate")}</p>
+            <ul className="space-y-3 text-base lg:text-sm text-white/70">
               <li><a href="#fleet" className="hover:text-white transition-colors">{t("nav.fleet")}</a></li>
               <li><a href="#how-it-works" className="hover:text-white transition-colors">{t("nav.howItWorks")}</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">{t("nav.about")}</a></li>
@@ -47,8 +47,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.contact")}</p>
-            <ul className="space-y-3 text-base text-white/70">
+            <p className="text-sm lg:text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">{t("footer.contact")}</p>
+            <ul className="space-y-3 text-base lg:text-sm text-white/70">
               <li>
                 <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
                   <Phone size={14} className="text-white/50" />
