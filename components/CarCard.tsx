@@ -52,11 +52,11 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
       }}
       className="group relative rounded-2xl overflow-hidden bg-card border border-card-border hover:border-gold/50 card-shadow transition-colors"
     >
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative aspect-[3/2] overflow-hidden bg-charcoal">
         <motion.img
           src={car.image}
           alt={car.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
