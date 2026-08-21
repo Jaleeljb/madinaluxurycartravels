@@ -60,7 +60,7 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
           whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card/45 via-card/5 to-transparent" />
         <span className="absolute top-3 left-3 text-xs lg:text-[10px] font-semibold uppercase tracking-widest bg-black/75 backdrop-blur px-2.5 py-1 rounded-full text-white">
           {car.category}
         </span>
@@ -83,10 +83,12 @@ export default function CarCard({ car, index }: { car: Car; index: number }) {
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-xl font-semibold leading-tight">{car.name}</h3>
+          <h3 className="font-display text-xl font-semibold leading-tight line-clamp-1">{car.name}</h3>
         </div>
 
-        <p className="mt-2 text-base text-ivory/60 leading-relaxed line-clamp-2">{car.description}</p>
+        <p className="mt-2 min-h-[3.25rem] text-base text-ivory/60 leading-relaxed line-clamp-2">
+          {car.description}
+        </p>
 
         <div className="mt-4 flex items-center gap-4 text-sm lg:text-xs text-muted font-mono">
           <span className="flex items-center gap-1.5">
